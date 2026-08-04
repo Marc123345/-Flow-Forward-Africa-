@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.19",
+    "next": "^13.5.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.66.1",
-    "swiper": "^10.2.0",
+    "sass": "^1.102.0",
+    "swiper": "^14.0.7",
     "wowjs": "^1.1.3"
   }
 }
