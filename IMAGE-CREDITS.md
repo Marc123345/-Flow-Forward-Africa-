@@ -26,6 +26,7 @@ credit lines that used to sit on the Kilimanjaro carousel.
 | `cta-wide.jpg` | Wide view of the hall | Closing CTA bands |
 | `page-header-bg.jpg` | Wide view of the hall | All inner-page banners |
 | `climb-1..4.jpg` | Outreach — the work the climb funds | Home — Kilimanjaro carousel |
+| `founder.jpg` | Alexia (Lexi) Levy leading a workshop | Meet the Founder |
 
 > **Consent.** These are identifiable young people, many of them minors. Make
 > sure the consent obtained at the workshop covers publication on the website
@@ -49,11 +50,9 @@ Replace it with the team's own summit photographs after September.
 ## Film
 
 `FINAL FFA VIDEO VERSION.mp4` on ImageKit — Flow Forward Africa's own film.
-Plays muted as the hero background and full-screen, with sound, behind
-"Watch the film".
+The hero runs photographs; the film opens full-screen with sound behind the
+"Watch the film" button.
 
 ## Not photography
 
-- `founder.svg` — still a branded placeholder. It marks a portrait of Alexia
-  (Lexi) Levy and needs an actual photograph of her.
 - `logo-1.svg` / `logo-2.svg`, `favicons/favicon.svg` — drawn for this project.

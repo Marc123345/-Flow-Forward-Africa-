@@ -4,7 +4,7 @@ import { Band, Prose, SectionTitle, IconCards, CtaBand, Split } from "@/componen
 export const metadata = {
     title: "About",
     description:
-        "Flow Forward Africa is a social impact project committed to ending period poverty by improving access to menstrual products, menstrual health education and community-led support.",
+        "Flow Forward Africa is a social impact project committed to ending period poverty by improving access to menstrual products, menstrual health education, and community-led support.",
 }
 
 const pillars = [
@@ -16,12 +16,12 @@ const pillars = [
     {
         icon: "icon-help",
         title: "Education",
-        text: "Delivering workshops that promote menstrual health, confidence and wellbeing.",
+        text: "Delivering workshops that promote menstrual health, confidence, and wellbeing.",
     },
     {
         icon: "icon-hand",
         title: "Collaborations",
-        text: "Working with schools, community organisations, volunteers and businesses to create lasting impact together.",
+        text: "Working with schools, community organisations, volunteers, and businesses to create lasting impact together.",
     },
 ]
 
@@ -37,14 +37,14 @@ export default function About() {
                     <Prose>
                         <p>
                             Flow Forward Africa is a social impact project committed to ending period poverty by
-                            improving access to menstrual products, menstrual health education and community-led
+                            improving access to menstrual products, menstrual health education, and community-led
                             support.
                         </p>
                         <p>
                             We believe that no girl should miss school, lose confidence, or have her future limited
-                            because of her period. By working alongside communities and trusted partners, we&rsquo;re
-                            creating practical, sustainable solutions that help girls stay in school and reach their
-                            full potential.
+                            because of her period. By working alongside communities and trusted partners,
+                            we&rsquo;re creating practical, sustainable solutions that help girls stay in school and
+                            reach their full potential.
                         </p>
                     </Prose>
                 </Band>
@@ -55,12 +55,13 @@ export default function About() {
                     title={<>It began with a<br /> simple question</>}
                     cta={{ label: "Our Initiatives", href: "/initiatives" }}
                 >
-                    <p className="ffa-pullquote">
-                        How can we create meaningful, lasting change?
+                    <p>
+                        Flow For It Africa began with a simple question: How can we create meaningful, lasting
+                        change?
                     </p>
                     <p>
                         What started as an idea soon became a journey of listening and learning. Through
-                        conversations with experts, community leaders and young women themselves, we discovered
+                        conversations with experts, community leaders, and young women themselves, we discovered
                         that real impact begins by understanding the needs of the people we serve.
                     </p>
                     <p>
@@ -81,14 +82,13 @@ export default function About() {
                         title={<>A future where no girl misses<br /> school because of her period</>}
                     />
                     <Prose>
+                        <p>We envision a future where no girl misses school because of her period.</p>
                         <p>
                             A future where menstrual health is understood without stigma, every girl has access to
                             the products she needs, and every young woman has the opportunity to thrive with
                             confidence and dignity.
                         </p>
-                        <p className="ffa-pullquote">
-                            Creating lasting change takes all of us.
-                        </p>
+                        <p className="ffa-pullquote">Creating lasting change takes all of us.</p>
                         <p>
                             Whether you&rsquo;re looking to collaborate, volunteer, sponsor an initiative, or support
                             our mission through a donation, your involvement helps create more opportunities for

@@ -2,7 +2,7 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import ContactForm from "@/components/elements/ContactForm"
 import { Band, Prose, SectionTitle, IconCards, CtaBand } from "@/components/elements/Blocks"
-import { site } from "@/lib/site"
+import { site, climb } from "@/lib/site"
 
 export const metadata = {
     title: "Get Involved",
@@ -39,7 +39,7 @@ const impact = [
     {
         icon: "icon-help",
         title: "Deliver Education",
-        text: "Creating safe spaces where girls can learn about menstrual health, wellbeing and self-confidence.",
+        text: "Creating safe spaces where girls can learn about menstrual health, wellbeing, and self-confidence.",
     },
     {
         icon: "icon-hand",
@@ -85,10 +85,13 @@ export default function Contact() {
                             continue building her future.
                         </p>
                         <p>
-                            Every donation helps us provide menstrual hygiene products, deliver educational
-                            workshops and expand our outreach programmes to communities across South Africa.
-                            Together, we&rsquo;re creating a future where no girl&rsquo;s education is interrupted by her
-                            period.
+                            At Flow Forward Africa, every donation helps us provide menstrual hygiene products,
+                            deliver educational workshops, and expand our outreach programmes to communities across
+                            South Africa.
+                        </p>
+                        <p>
+                            Together, we&rsquo;re creating a future where no girl&rsquo;s education is interrupted
+                            by her period.
                         </p>
                         <p>
                             <strong>Every contribution, regardless of its size, helps create lasting change.</strong>
@@ -101,6 +104,46 @@ export default function Contact() {
                 </Band>
 
                 <IconCards items={impact} />
+
+                <Band blush>
+                    <SectionTitle
+                        tagline="Support the Kilimanjaro Challenge"
+                        title={<>Turning every step<br /> into opportunity</>}
+                    />
+                    <Prose>
+                        <p>
+                            Our Kilimanjaro expedition is more than a climb. It&rsquo;s a fundraising campaign that
+                            will help expand the reach of Flow Forward Africa and support thousands more girls.
+                        </p>
+                        <p>
+                            By supporting the climb, you&rsquo;re helping us turn every step into opportunity for the
+                            young women we serve.{" "}
+                            <Link href="/kilimanjaro">Read more about the expedition</Link>.
+                        </p>
+
+                        <h3>More Ways to Make an Impact</h3>
+                        <p>There are many ways to be part of this journey.</p>
+                        <p>
+                            Whether you&rsquo;d like to make a donation, sponsor the Kilimanjaro expedition, partner
+                            with us as a business, or volunteer your time, your support helps us create meaningful
+                            change where it&rsquo;s needed most.
+                        </p>
+
+                        <h3>Join the Movement</h3>
+                        <p className="ffa-pullquote">
+                            Period poverty is a challenge we can solve together.
+                        </p>
+                        <p>
+                            Your generosity helps keep girls in classrooms, strengthens communities, and creates
+                            opportunities that last far beyond today.
+                        </p>
+                        <p>
+                            Thank you for believing in a future where every girl has the freedom to learn, grow, and
+                            thrive.
+                        </p>
+                        <p>Together, we can keep girls moving forward.</p>
+                    </Prose>
+                </Band>
 
                 <section className="contact-one">
                     <div className="container">

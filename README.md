@@ -18,8 +18,7 @@ These are the open items. Everything else is finished.
 
 | # | Item | Where to change it |
 |---|------|--------------------|
-| 1 | **Founder portrait** is still a placeholder, and the Kilimanjaro shot is stock. All other photography is FFA's own. | `public/assets/images/ffa/` — see [Photography](#photography) |
-| 2 | **Contact email.** Currently `hello@flowforwardafrica.org` (invented). | `lib/site.js` → `email` |
+| 1 | **Mount Kilimanjaro is the only stock image left.** Everything else is FFA's own. | `public/assets/images/ffa/` — see [Photography](#photography) |
 | 3 | **Phone number.** Omitted everywhere (set to `null`); the UI hides it until you add one. | `lib/site.js` → `phone` |
 | 5 | **Donation URL.** Donations are handled off-site. Paste the campaign link into `donateUrl` and every Donate button on the site points at it and opens in a new tab. Until then they fall back to `/contact`. | `lib/site.js` → `donateUrl` |
 | 6 | **Contact form delivery.** No endpoint configured, so the form is replaced by a direct "email us" block. | See [Contact form](#contact-form) |
@@ -88,10 +87,8 @@ the same aspect ratio, nothing else to change.
 **Consent matters here.** These are identifiable young people, many of them
 minors. Confirm the workshop consent covers website and social publication.
 
-**Still outstanding:** `founder.svg` is a placeholder for a portrait of Alexia
-(Lexi) Levy — it needs a real photograph of her. And Mount Kilimanjaro is still
-a stock image (the climb hasn't happened); swap in the team's own summit photos
-afterwards.
+**Still outstanding:** Mount Kilimanjaro is the one stock image left (the climb
+hasn't happened yet) — swap in the team's own summit photographs afterwards.
 
 ## Donations
 

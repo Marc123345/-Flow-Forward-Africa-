@@ -19,20 +19,19 @@ export default function Kilimanjaro() {
                     />
                     <Prose>
                         <p>
-                            At {climb.when}, Flow Forward Africa will take on one of Africa&rsquo;s
-                            greatest challenges: climbing {climb.mountain}.
+                            At {climb.when}, Flow Forward Africa will take on one of Africa&rsquo;s greatest
+                            challenges: climbing {climb.mountain}.
                         </p>
                         <p>
-                            Standing at {climb.heightMetres.toLocaleString("en-ZA")} metres above sea level,
-                            Kilimanjaro is a test of resilience, determination and purpose. For us, it represents
-                            something even greater.
+                            Standing at {climb.heightLabel} metres above sea level, Kilimanjaro is a test of
+                            resilience, determination, and purpose. For us, it represents something even greater.
                         </p>
                         <p className="ffa-pullquote">
                             Every step we take is a step towards ending period poverty.
                         </p>
                         <p>
                             This expedition is more than a climb. It is a commitment to ensuring that girls across
-                            South Africa have access to the menstrual products, education and support they need to
+                            South Africa have access to the menstrual products, education, and support they need to
                             remain in school and reach their full potential.
                         </p>
                         <p>
@@ -48,15 +47,20 @@ export default function Kilimanjaro() {
                 >
                     <p>
                         Period poverty continues to prevent thousands of girls from participating fully in their
-                        education. Without access to essential menstrual products, many girls miss valuable
-                        classroom time, lose confidence and face unnecessary barriers to achieving their goals.
+                        education.
                     </p>
                     <p>
-                        We believe that no girl&rsquo;s future should be defined by circumstances beyond her control.
+                        Without access to essential menstrual products, many girls miss valuable classroom time,
+                        lose confidence, and face unnecessary barriers to achieving their goals.
                     </p>
+                    <p>
+                        We believe that no girl&rsquo;s future should be defined by circumstances beyond her
+                        control.
+                    </p>
+                    <p>The Kilimanjaro expedition is our way of turning awareness into action.</p>
                     <p>
                         Through this challenge, we are raising funds that will directly support menstrual hygiene
-                        product distribution, educational workshops and community outreach programmes delivered
+                        product distribution, educational workshops, and community outreach programmes delivered
                         alongside our partners.
                     </p>
                     <p className="ffa-pullquote">
@@ -84,9 +88,9 @@ export default function Kilimanjaro() {
                             fundraising goals through our public campaign, proving that lasting impact is created
                             when communities come together around a shared purpose.
                         </p>
+                        <p>Together, we are aiming to raise more than funds.</p>
                         <p className="ffa-pullquote">
-                            Together, we are aiming to raise more than funds. We are raising awareness, creating
-                            conversations, and inspiring action.
+                            We are raising awareness, creating conversations, and inspiring action.
                         </p>
                     </Prose>
                 </Band>
@@ -97,20 +101,18 @@ export default function Kilimanjaro() {
                         title={<>The beginning of<br /> the next chapter</>}
                     />
                     <Prose>
-                        <p>
-                            Reaching the top of Kilimanjaro will mark the end of the expedition. It will also mark
-                            the beginning of the next chapter for Flow Forward Africa.
-                        </p>
+                        <p>Reaching the top of Kilimanjaro will mark the end of the expedition.</p>
+                        <p>It will also mark the beginning of the next chapter for Flow Forward Africa.</p>
                         <p>
                             The funds raised will help us expand our outreach programmes, provide menstrual hygiene
                             products to more girls, strengthen our educational workshops, and build partnerships
                             with communities that are creating lasting change from within.
                         </p>
+                        <p>Our vision extends far beyond one mountain.</p>
                         <p>
-                            Our vision extends far beyond one mountain. We are working towards a future where no
-                            girl misses school because of her period, where menstrual health is discussed openly and
-                            without stigma, and where every young woman has the opportunity to pursue her education
-                            with confidence and dignity.
+                            We are working towards a future where no girl misses school because of her period, where
+                            menstrual health is discussed openly and without stigma, and where every young woman has
+                            the opportunity to pursue her education with confidence and dignity.
                         </p>
 
                         <h3>Climb With Us</h3>
@@ -119,16 +121,16 @@ export default function Kilimanjaro() {
                         </p>
                         <p>
                             You can climb with us by becoming a corporate sponsor, supporting our fundraising
-                            campaign, partnering with Flow Forward Africa, or sharing our mission with your
+                            campaign, partnering with Flow For It Africa, or sharing our mission with your
                             community.
                         </p>
                         <p>
-                            Every contribution, every conversation and every act of support helps move us closer to
+                            Every contribution, every conversation, and every act of support helps move us closer to
                             a future where period poverty no longer limits a girl&rsquo;s potential.
                         </p>
+                        <p>Together, we can turn one climb into thousands of opportunities.</p>
                         <p className="ffa-pullquote">
-                            Together, we can turn one climb into thousands of opportunities. Together, we can help
-                            every girl keep moving forward.
+                            Together, we can help every girl keep moving forward.
                         </p>
                     </Prose>
                 </Band>

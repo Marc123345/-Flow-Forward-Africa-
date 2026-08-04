@@ -7,21 +7,14 @@ import { kilimanjaroImage } from "@/lib/site"
 import DonateButton from "@/components/elements/DonateButton"
 import VideoModal from "@/components/elements/VideoModal"
 
-// The Flow Forward Africa film, played as the background of the opening hero
-// slide. Served through ImageKit's video transform — sized and re-encoded for a
-// background loop, which takes it from 23.5 MB down to ~11 MB. It sits under
-// the rose gradient, so the lower bitrate isn't visible.
+// The Flow Forward Africa film. It is no longer a hero background — the hero
+// runs photographs — but "Watch the film" opens it full-screen with sound.
 //
 // `f-mp4` is deliberate: left to itself ImageKit content-negotiates and hands
-// browsers a WebM variant that stalls before it delivers any data. Pinning the
+// browsers a WebM variant that stalls before delivering any data. Pinning the
 // container keeps playback reliable.
-const VIDEO_BASE =
-    "https://ik.imagekit.io/qcvroy8xpd/FINAL%20FFA%20VIDEO%20VERSION%20(1)%20(1)%20(1).mp4"
-
-// Background loop: smaller and softer, it sits under the gradient.
-const HERO_VIDEO = `${VIDEO_BASE}?tr=w-1280,q-50,f-mp4`
-// What people actually watch, in the player.
-const FULL_VIDEO = `${VIDEO_BASE}?tr=w-1280,q-70,f-mp4`
+const FULL_VIDEO =
+    "https://ik.imagekit.io/qcvroy8xpd/FINAL%20FFA%20VIDEO%20VERSION%20(1)%20(1)%20(1).mp4?tr=w-1280,q-70,f-mp4"
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -44,11 +37,11 @@ const swiperOptions = {
 
 const slides = [
     {
-        video: HERO_VIDEO,
-        poster: "/assets/images/ffa/hero-1.jpg",
+        image: "/assets/images/ffa/hero-1.jpg",
         eyebrow: "Ending period poverty",
         title: <>Every girl<br /> deserves the freedom<br /> to thrive</>,
         cta: { label: "Donate", donate: true },
+        watch: true,
     },
     {
         image: kilimanjaroImage(1920, 800),
@@ -65,44 +58,18 @@ const slides = [
 ]
 
 export default function Banner() {
-    const videoRef = useRef(null)
+    const swiperRef = useRef(null)
     const [playerOpen, setPlayerOpen] = useState(false)
 
+    // Stop the hero rotating behind the player while someone is watching.
     const openPlayer = () => {
-        videoRef.current?.pause()
+        swiperRef.current?.autoplay?.stop()
         setPlayerOpen(true)
     }
 
     const closePlayer = () => {
         setPlayerOpen(false)
-        videoRef.current?.play().catch(() => {})
-    }
-
-    // Hold the hero on the film while it plays rather than sliding away from
-    // it after seven seconds; resume rotating once the viewer moves on.
-    //
-    // Synced on transition END, not on slideChange: in loop mode Swiper reports
-    // a transient index while it repositions, which paused the film a few
-    // seconds in and never resumed it.
-    const handleInit = (swiper) => {
-        if (swiper.realIndex !== 0) return
-        swiper.autoplay?.stop()
-        videoRef.current?.play().catch(() => {})
-    }
-
-    const syncVideo = (swiper) => {
-        const video = videoRef.current
-        if (!video) return
-        if (swiper.realIndex === 0) {
-            swiper.autoplay?.stop()
-            video.play().catch(() => {
-                // Autoplay can be refused (low-power mode, data saver). The
-                // poster frame stands in for it.
-            })
-        } else {
-            video.pause()
-            swiper.autoplay?.start()
-        }
+        swiperRef.current?.autoplay?.start()
     }
 
     return (
@@ -110,29 +77,13 @@ export default function Banner() {
             <section className="main-slider">
                 <Swiper
                     {...swiperOptions}
-                    onSwiper={handleInit}
-                    onSlideChangeTransitionEnd={syncVideo}
+                    onSwiper={(swiper) => { swiperRef.current = swiper }}
                     className="main-slider__carousel"
                 >
                     {slides.map(({ cta: { label: ctaLabel, ...ctaProps }, ...slide }, i) => (
                         <SwiperSlide key={i}>
                             <div className="swiper-slide">
-                                {slide.video ? (
-                                    <video
-                                        ref={videoRef}
-                                        className="main-slider__video"
-                                        src={slide.video}
-                                        poster={slide.poster}
-                                        preload="metadata"
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        aria-hidden="true"
-                                    />
-                                ) : (
-                                    <div className="image-layer" style={{ backgroundImage: `url(${slide.image})` }}></div>
-                                )}
+                                <div className="image-layer" style={{ backgroundImage: `url(${slide.image})` }}></div>
                                 <div className="image-layer__left-gradient"></div>
                                 <div className="container">
                                     <div className="main-slider-content">
@@ -152,7 +103,7 @@ export default function Banner() {
                                                         <span><i className="icon-arrow-right"></i></span>
                                                     </Link>
                                                 )}
-                                                {slide.video && (
+                                                {slide.watch && (
                                                     <button
                                                         type="button"
                                                         className="ffa-watch-btn"

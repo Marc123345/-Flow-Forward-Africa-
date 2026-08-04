@@ -14,7 +14,7 @@ const initiatives = [
         image: "/assets/images/ffa/initiative-education.jpg",
         title: "Menstrual Health Education",
         lead: "Knowledge empowers.",
-        text: "Our workshops create safe spaces where girls can learn about menstrual health, hygiene and wellbeing while building confidence through open and honest conversations.",
+        text: "Our workshops create safe spaces where girls can learn about menstrual health, hygiene, and wellbeing while building confidence through open and honest conversations.",
     },
     {
         image: "/assets/images/ffa/initiative-products.jpg",
@@ -26,7 +26,7 @@ const initiatives = [
         image: "/assets/images/ffa/initiative-partners.jpg",
         title: "Community Partnerships",
         lead: "Lasting impact happens through collaboration.",
-        text: `Working alongside organisations like ${site.partners[0]}, as well as schools, volunteers and local leaders, we build initiatives that are shaped by the communities we serve and designed to create sustainable change.`,
+        text: `Working alongside organisations like ${site.partners[0]}, as well as schools, volunteers, and local leaders, we build initiatives that are shaped by the communities we serve and designed to create sustainable change.`,
     },
 ]
 
@@ -45,8 +45,8 @@ export default function Initiatives() {
                             girl is held back by period poverty.
                         </p>
                         <p>
-                            By working alongside communities, schools and trusted partners, we create practical
-                            solutions that improve access to menstrual health education, essential products and
+                            By working alongside communities, schools, and trusted partners, we create practical
+                            solutions that improve access to menstrual health education, essential products, and
                             ongoing support.
                         </p>
                     </Prose>
@@ -83,22 +83,23 @@ export default function Initiatives() {
                     <SectionTitle tagline="Looking Ahead" title={<>Our work grows with<br /> every partnership</>} />
                     <Prose>
                         <p>
-                            Our work continues to grow with every partnership, every outreach programme and every
+                            Our work continues to grow with every partnership, every outreach programme, and every
                             conversation.
                         </p>
                         <p>
-                            As Flow Forward Africa expands, so will our initiatives, allowing us to reach more girls,
-                            strengthen more communities, and move closer to a future where period poverty is no
-                            longer a barrier to education or opportunity.
+                            As Flow Forward Africa expands, so will our initiatives, allowing us to reach more
+                            girls, strengthen more communities, and move closer to a future where period poverty is
+                            no longer a barrier to education or opportunity.
                         </p>
                         <p className="ffa-pullquote">
-                            Whether you&rsquo;re a community organisation, corporate partner, volunteer or passionate
-                            individual, you can help us create meaningful change.
+                            Whether you&rsquo;re a community organisation, corporate partner, volunteer, or
+                            passionate individual, you can help us create meaningful change.
                         </p>
                         <p>
-                            Together, we can ensure every girl has the confidence, dignity and opportunity to thrive.
-                            You can also <Link href="/kilimanjaro">support the Kilimanjaro expedition</Link>, which
-                            funds the growth of every programme on this page.
+                            Together, we can ensure every girl has the confidence, dignity, and opportunity to
+                            thrive. You can also{" "}
+                            <Link href="/kilimanjaro">support the Kilimanjaro expedition</Link>, which funds the
+                            growth of every programme on this page.
                         </p>
                     </Prose>
                 </Band>

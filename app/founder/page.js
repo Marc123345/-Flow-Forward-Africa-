@@ -18,7 +18,7 @@ export default function Founder() {
                             <div className="col-xl-5 col-lg-6">
                                 <div className="volunteer-details__left">
                                     <div className="volunteer-details__img">
-                                        <img className="ffa-photo" src="/assets/images/ffa/founder.svg" alt="Alexia (Lexi) Levy" />
+                                        <img className="ffa-photo" src="/assets/images/ffa/founder.jpg" alt="Alexia (Lexi) Levy" />
                                     </div>
                                 </div>
                             </div>
@@ -32,17 +32,20 @@ export default function Founder() {
                                     </div>
                                     <div className="ffa-prose">
                                         <p>
-                                            Lexi is a Grade 11 student at St Cyprian&rsquo;s School in Cape Town. At just 16
-                                            years old, she founded Flow Forward Africa with the belief that no girl should
-                                            miss out on her education because of her period.
+                                            Alexia (Lexi) Levy is a Grade 11 Student at St Cyprians School in Cape
+                                            Town.
                                         </p>
                                         <p>
-                                            Driven by a passion for creating meaningful change, Lexi has dedicated her time
-                                            to volunteering, mentoring and supporting young people through education and
-                                            community service. After researching the impact of period poverty, engaging
-                                            directly with experts and leaders in the impact space, and collaborating with
-                                            girls in underserved communities, she realised that lasting solutions begin by
-                                            listening.
+                                            At just 16 years old, Lexi founded Flow Forward Africa with the belief
+                                            that no girl should miss out on her education because of her period.
+                                        </p>
+                                        <p>
+                                            Driven by a passion for creating meaningful change, Lexi has dedicated
+                                            her time to volunteering, mentoring, and supporting young people through
+                                            education and community service. After researching the impact of period
+                                            poverty, engaging directly with experts and leaders in the impact space
+                                            and collaborating with girls in underserved communities, she realised
+                                            that lasting solutions begin by listening.
                                         </p>
                                     </div>
                                 </div>
@@ -54,13 +57,13 @@ export default function Founder() {
                 <Band blush>
                     <Prose>
                         <p>
-                            Today, she leads Flow Forward Africa alongside community partners, volunteers and
-                            supporters who share a common vision: to ensure that every girl has access to the
-                            products, education and opportunities she deserves.
+                            Today, she leads Flow Forward Africa alongside community partners, volunteers, and
+                            supporters who share a common vision to ensure that every girl has access to the
+                            products, education, and opportunities she deserves.
                         </p>
                         <p className="ffa-pullquote">
-                            For Lexi, this initiative is a young woman&rsquo;s commitment to helping others move forward
-                            with confidence, dignity and hope.
+                            For Lexi, this initiative is a young woman&rsquo;s commitment to helping others move
+                            forward with confidence, dignity, and hope.
                         </p>
                     </Prose>
                 </Band>
