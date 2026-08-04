@@ -1,21 +1,57 @@
+'use client'
 import Link from "next/link"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 import { climb } from "@/lib/site"
+
+/**
+ * The Kilimanjaro campaign block on the home page.
+ *
+ * Copy sits on the left, a carousel of climb photography on the right.
+ * Slides carry their own credit line because three of the four photographs are
+ * Creative Commons BY-SA and require attribution — see IMAGE-CREDITS.md.
+ */
+const slides = [
+    {
+        image: "/assets/images/ffa/climb-1.jpg",
+        caption: "Reaching Gilman's Point, 5,681 m",
+        credit: null,
+    },
+    {
+        image: "/assets/images/ffa/climb-2.jpg",
+        caption: "On the route toward the Lava Tower",
+        credit: "Masa Sakano, CC BY-SA 2.0",
+    },
+    {
+        image: "/assets/images/ffa/climb-3.jpg",
+        caption: "The team at the higher camps",
+        credit: "FokshaAnatolii, CC BY-SA 4.0",
+    },
+    {
+        image: "/assets/images/ffa/climb-4.jpg",
+        caption: "Every load carried, every metre earned",
+        credit: "Sergei Andreichuk, CC BY-SA 4.0",
+    },
+]
+
+const swiperOptions = {
+    modules: [Autoplay, Pagination, Navigation],
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: { delay: 5500, disableOnInteraction: false },
+    navigation: { nextEl: ".ffa-climb-next", prevEl: ".ffa-climb-prev" },
+    pagination: { el: ".ffa-climb-pagination", clickable: true },
+}
 
 export default function Kilimanjaro() {
     return (
         <>
-            {/* The Kilimanjaro Climb — the current fundraising campaign */}
-            <section className="who-we-are">
-                <div className="who-we-are__shape-3 float-bob-y">
-                    <img src="/assets/images/shapes/who-we-are-shape-3.png" alt="" />
-                </div>
-                <div className="who-we-are__shape-4 float-bob-x">
-                    <img src="/assets/images/shapes/who-we-are-shape-4.png" alt="" />
-                </div>
+            <section className="ffa-climb">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-xl-6 wow fadeInLeft" data-wow-delay="300ms">
-                            <div className="who-we-are__left">
+                    <div className="row align-items-center">
+                        <div className="col-xl-6 col-lg-6 wow fadeInLeft" data-wow-delay="200ms">
+                            <div className="ffa-climb__copy">
                                 <div className="section-title text-left sec-title-animation animation-style2">
                                     <div className="section-title__tagline-box">
                                         <span className="section-title__tagline">The Kilimanjaro Climb</span>
@@ -24,11 +60,12 @@ export default function Kilimanjaro() {
                                         One Mountain.<br /> Thousands of Futures.
                                     </h2>
                                 </div>
-                                <p className="who-we-are__text">
+                                <p className="ffa-climb__text">
                                     At {climb.when}, Flow Forward Africa will take on one of Africa&rsquo;s greatest
-                                    challenges: climbing {climb.mountain}. Standing at {climb.heightMetres.toLocaleString("en-ZA")} metres
-                                    above sea level, it is a test of resilience, determination and purpose. For us,
-                                    it represents something even greater.
+                                    challenges: climbing {climb.mountain}. Standing at{" "}
+                                    {climb.heightMetres.toLocaleString("en-ZA")} metres above sea level, it is a test
+                                    of resilience, determination and purpose. For us, it represents something even
+                                    greater.
                                 </p>
                                 <ul className="ffa-list">
                                     <li>
@@ -42,24 +79,40 @@ export default function Kilimanjaro() {
                                         our public campaign.
                                     </li>
                                 </ul>
-                                <div className="who-we-are__btn-box">
-                                    <Link href="/kilimanjaro" className="who-we-are__btn thm-btn">
+                                <div className="ffa-climb__btn">
+                                    <Link href="/kilimanjaro" className="thm-btn">
                                         Climb With Us<span><i className="icon-arrow-right"></i></span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
-                            <div className="who-we-are__right">
-                                <div className="who-we-are__img-box">
-                                    <div className="who-we-are__img">
-                                        <img className="ffa-photo" src="/assets/images/ffa/kilimanjaro-1.jpg" alt="" />
-                                    </div>
-                                    <div className="who-we-are__img-2">
-                                        <img className="ffa-photo" src="/assets/images/ffa/kilimanjaro-2.jpg" alt="" />
-                                    </div>
-                                    <div className="who-we-are__shape-1 img-bounce"></div>
-                                    <div className="who-we-are__shape-2"></div>
+
+                        <div className="col-xl-6 col-lg-6 wow fadeInRight" data-wow-delay="300ms">
+                            <div className="ffa-climb__media">
+                                <Swiper {...swiperOptions} className="ffa-climb__carousel">
+                                    {slides.map((slide) => (
+                                        <SwiperSlide key={slide.image}>
+                                            <figure className="ffa-climb__slide">
+                                                <img src={slide.image} alt={slide.caption} />
+                                                <figcaption>
+                                                    <span className="ffa-climb__caption">{slide.caption}</span>
+                                                    {slide.credit && (
+                                                        <span className="ffa-climb__credit">{slide.credit}</span>
+                                                    )}
+                                                </figcaption>
+                                            </figure>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+
+                                <div className="ffa-climb__controls">
+                                    <button type="button" className="ffa-climb__arrow ffa-climb-prev" aria-label="Previous photo">
+                                        <i className="icon-arrow-right-two"></i>
+                                    </button>
+                                    <div className="ffa-climb__pagination ffa-climb-pagination"></div>
+                                    <button type="button" className="ffa-climb__arrow ffa-climb-next" aria-label="Next photo">
+                                        <i className="icon-arrow-right-two"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>

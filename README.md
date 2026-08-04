@@ -105,8 +105,10 @@ change).
 | `initiative-education.jpg` | 820×740 | Session under a shelter | Initiatives |
 | `initiative-products.jpg` | 820×740 | Menstrual products being handed out | Initiatives |
 | `initiative-partners.jpg` | 820×740 | Health worker with materials | Initiatives |
-| `kilimanjaro-1.jpg` | 1140×1120 | Climber at Gilman's Point | Home — Kilimanjaro |
-| `kilimanjaro-2.jpg` | 740×680 | Kilimanjaro from the ridge | Home — Kilimanjaro |
+| `climb-1.jpg` | 1150×960 | Climber at Gilman's Point | Home — Kilimanjaro carousel |
+| `climb-2.jpg` | 1150×960 | Trekkers heading for the Lava Tower | Home — Kilimanjaro carousel |
+| `climb-3.jpg` | 1150×960 | The team at the higher camps | Home — Kilimanjaro carousel |
+| `climb-4.jpg` | 1150×960 | A woman porter on the mountain | Home — Kilimanjaro carousel |
 | `kilimanjaro-wide.jpg` | 1800×930 | Kilimanjaro under cloud | Kilimanjaro page |
 | `blog-listening.jpg` | 1200×750 | Large group seated outdoors | Blog post 1 |
 | `blog-kilimanjaro.jpg` | 1200×750 | Climber at the summit sign | Blog post 2 |
@@ -117,6 +119,11 @@ change).
 `founder.svg` is **still a branded placeholder on purpose.** It marks a portrait
 of Alexia (Lexi) Levy — a real, named person — and putting a stock photograph of
 someone else there would misrepresent her. It needs an actual photo of Lexi.
+
+**Three of the carousel photos need attribution.** `climb-2`, `climb-3` and
+`climb-4` are CC BY-SA, so each slide renders a small credit line over the
+image. Those credits are required by the licence — don't delete them without
+swapping the photograph out. Everything else on the site is attribution-free.
 
 **Two things to know when swapping images:**
 
