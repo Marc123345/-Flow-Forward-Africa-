@@ -42,10 +42,11 @@ export function Prose({ children, width = 8 }) {
     )
 }
 
-/** The template's pill button. */
-export function Btn({ href, children, className = "thm-btn" }) {
+/** The template's pill button. Extra props (target/rel) pass straight through,
+ *  so an external Donate link can open in a new tab. */
+export function Btn({ href, children, className = "thm-btn", ...rest }) {
     return (
-        <Link href={href} className={className}>
+        <Link href={href} className={className} {...rest}>
             {children}<span><i className="icon-arrow-right"></i></span>
         </Link>
     )
@@ -93,8 +94,8 @@ export function CtaBand({ title, primary, secondary, image = "/assets/images/ffa
                         <h2 className="cta-one__title title-animation">{title}</h2>
                     </div>
                     <div className="cta-one__btn-box">
-                        {primary && <Btn href={primary.href} className="cta-one__btn-1 thm-btn">{primary.label}</Btn>}
-                        {secondary && <Btn href={secondary.href} className="cta-one__btn-2 thm-btn">{secondary.label}</Btn>}
+                        {primary && (() => { const { label, ...p } = primary; return <Btn {...p} className="cta-one__btn-1 thm-btn">{label}</Btn> })()}
+                        {secondary && (() => { const { label, ...s } = secondary; return <Btn {...s} className="cta-one__btn-2 thm-btn">{label}</Btn> })()}
                     </div>
                 </div>
             </div>

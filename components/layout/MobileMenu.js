@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
-import { site } from "@/lib/site";
+import { site, donateLinkProps } from "@/lib/site";
 
 const MobileMenu = ({ handleMobileMenu }) => {
   const [isActive, setIsActive] = useState({
@@ -45,8 +45,8 @@ const MobileMenu = ({ handleMobileMenu }) => {
                 <li><Link href="/initiatives" onClick={handleMobileMenu}>Initiatives</Link></li>
                 <li><Link href="/kilimanjaro" onClick={handleMobileMenu}>Kilimanjaro Climb</Link></li>
                 <li><Link href="/blog" onClick={handleMobileMenu}>Blog</Link></li>
-                <li><Link href="/donate" onClick={handleMobileMenu}>Donate</Link></li>
                 <li><Link href="/contact" onClick={handleMobileMenu}>Get Involved</Link></li>
+                <li><Link {...donateLinkProps} onClick={handleMobileMenu}>Donate</Link></li>
               </ul>
             </div>
           </div>

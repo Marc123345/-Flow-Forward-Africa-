@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { donateHref } from "@/lib/site"
+import { donateLinkProps } from "@/lib/site"
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -28,7 +28,7 @@ const slides = [
         image: "/assets/images/ffa/hero-1.jpg",
         eyebrow: "Ending period poverty",
         title: <>Every girl<br /> deserves the freedom<br /> to thrive</>,
-        cta: { label: "Donate", href: donateHref },
+        cta: { label: "Donate", ...donateLinkProps },
     },
     {
         image: "/assets/images/ffa/hero-3.jpg",
@@ -49,7 +49,7 @@ export default function Banner() {
         <>
             <section className="main-slider">
                 <Swiper {...swiperOptions} className="main-slider__carousel">
-                    {slides.map((slide, i) => (
+                    {slides.map(({ cta: { label: ctaLabel, ...ctaProps }, ...slide }, i) => (
                         <SwiperSlide key={i}>
                             <div className="swiper-slide">
                                 <div className="image-layer" style={{ backgroundImage: `url(${slide.image})` }}></div>
@@ -64,8 +64,8 @@ export default function Banner() {
                                                 <h2>{slide.title}</h2>
                                             </div>
                                             <div className="btn-box">
-                                                <Link href={slide.cta.href} className="thm-btn">
-                                                    {slide.cta.label}
+                                                <Link {...ctaProps} className="thm-btn">
+                                                    {ctaLabel}
                                                     <span><i className="icon-arrow-right"></i></span>
                                                 </Link>
                                             </div>

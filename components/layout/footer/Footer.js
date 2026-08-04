@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { site, donateHref } from "@/lib/site"
+import { site, donateLinkProps } from "@/lib/site"
 
 export default function Footer() {
     const year = new Date().getFullYear()
@@ -74,7 +74,7 @@ export default function Footer() {
                                             <li><Link href="/about">About Us</Link></li>
                                             <li><Link href="/founder">Meet the Founder</Link></li>
                                             <li><Link href="/blog">Blog</Link></li>
-                                            <li><Link href={donateHref}>Donate</Link></li>
+                                            <li><Link {...donateLinkProps}>Donate</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ export default function Footer() {
                                         <ul className="list-unstyled site-footer__bottom-menu">
                                             <li><Link href="/about">About</Link></li>
                                             <li><Link href="/contact">Get Involved</Link></li>
-                                            <li><Link href={donateHref}>Donate</Link></li>
+                                            <li><Link {...donateLinkProps}>Donate</Link></li>
                                         </ul>
                                     </div>
                                 </div>

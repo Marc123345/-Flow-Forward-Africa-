@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { posts, getPost } from "@/lib/posts"
 import { CtaBand } from "@/components/elements/Blocks"
-import { site, donateHref } from "@/lib/site"
+import { site, donateLinkProps } from "@/lib/site"
 
 export function generateStaticParams() {
     return posts.map((post) => ({ slug: post.slug }))
@@ -102,7 +102,7 @@ export default function BlogPost({ params }) {
 
                 <CtaBand
                     title={<>Help us keep girls<br /> in the classroom</>}
-                    primary={{ label: "Donate", href: donateHref }}
+                    primary={{ label: "Donate", ...donateLinkProps }}
                     secondary={{ label: "Get Involved", href: "/contact" }}
                 />
             </Layout>

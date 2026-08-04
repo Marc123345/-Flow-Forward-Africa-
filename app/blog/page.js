@@ -2,7 +2,7 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { posts } from "@/lib/posts"
 import { CtaBand } from "@/components/elements/Blocks"
-import { donateHref } from "@/lib/site"
+import { donateLinkProps } from "@/lib/site"
 
 export const metadata = {
     title: "Blog",
@@ -55,7 +55,7 @@ export default function Blog() {
 
                 <CtaBand
                     title={<>Be part of the<br /> next chapter</>}
-                    primary={{ label: "Donate", href: donateHref }}
+                    primary={{ label: "Donate", ...donateLinkProps }}
                     secondary={{ label: "Get Involved", href: "/contact" }}
                 />
             </Layout>

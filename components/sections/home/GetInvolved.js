@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { donateHref } from "@/lib/site"
+import { donateLinkProps } from "@/lib/site"
 
 export default function GetInvolved() {
     return (
@@ -12,14 +12,14 @@ export default function GetInvolved() {
                             <div className="donate-one__single">
                                 <div className="donate-one__single-bg" style={{ backgroundImage: 'url(/assets/images/ffa/donate-wide.jpg)' }}></div>
                                 <h3 className="donate-one__title">
-                                    <Link href={donateHref}>Keep a girl in school</Link>
+                                    <Link {...donateLinkProps}>Keep a girl in school</Link>
                                 </h3>
                                 <p className="donate-one__text">
                                     Every donation helps us provide menstrual hygiene products,<br /> deliver
                                     educational workshops and expand our outreach<br /> programmes across South Africa.
                                 </p>
                                 <div className="donate-one__btn-box">
-                                    <Link href={donateHref} className="donate-one__btn thm-btn">
+                                    <Link {...donateLinkProps} className="donate-one__btn thm-btn">
                                         Donate<span><i className="icon-arrow-right"></i></span>
                                     </Link>
                                 </div>

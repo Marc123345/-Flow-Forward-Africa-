@@ -22,7 +22,7 @@ These are the open items. Everything else is finished.
 | 2 | **Contact email.** Currently `hello@flowforwardafrica.org` (invented). | `lib/site.js` → `email` |
 | 3 | **Phone number.** Omitted everywhere (set to `null`); the UI hides it until you add one. | `lib/site.js` → `phone` |
 | 4 | **Social links.** All point at `#`. | `lib/site.js` → `social` |
-| 5 | **BackaBuddy / donation URL.** Not set, so every Donate button routes to the on-site `/donate` page, which honestly says the link is being finalised. | `lib/site.js` → `donateUrl` |
+| 5 | **Donation URL.** Donations are handled off-site. Paste the campaign link into `donateUrl` and every Donate button on the site points at it and opens in a new tab. Until then they fall back to `/contact`. | `lib/site.js` → `donateUrl` |
 | 6 | **Contact form delivery.** No endpoint configured, so the form is replaced by a direct "email us" block. | See [Contact form](#contact-form) |
 | 7 | **Kilimanjaro dates.** Copy says "end of September" with no year. | `lib/site.js` → `climb.when` |
 | 8 | **Blog post dates.** Placeholder dates (18 Jun / 24 Jul 2026). | `lib/posts.js` |
@@ -42,10 +42,9 @@ app/
   founder/                 Meet the Founder
   initiatives/             Our Initiatives
   kilimanjaro/             The Kilimanjaro Climb
-  donate/                  Donate
   blog/                    Blog listing
   blog/[slug]/             Blog article (generated from lib/posts.js)
-  contact/                 Get Involved / Contact
+  contact/                 Get Involved / Contact / Donate
   not-found.js             404
 
 components/
@@ -112,7 +111,7 @@ change).
 | `kilimanjaro-wide.jpg` | 1800×930 | Kilimanjaro under cloud | Kilimanjaro page |
 | `blog-listening.jpg` | 1200×750 | Large group seated outdoors | Blog post 1 |
 | `blog-kilimanjaro.jpg` | 1200×750 | Climber at the summit sign | Blog post 2 |
-| `donate-wide.jpg` | 1800×840 | Girl smiling with a certificate | Donate + Home |
+| `donate-wide.jpg` | 1800×840 | Girl smiling with a certificate | Home — Get Involved |
 | `cta-wide.jpg` | 1920×500 | Table Mountain, Cape Town | Closing CTA bands |
 | `page-header-bg.jpg` | 1920×550 | Table Mountain, Cape Town | All inner-page banners |
 
@@ -135,6 +134,23 @@ swapping the photograph out. Everything else on the site is attribution-free.
   encoder, so they are all JPEG. Converting to WebP/AVIF, or moving the `<img>`
   tags to `next/image`, would cut that substantially — worth doing before launch
   if page weight matters.
+
+---
+
+## Donations
+
+There is no donation page and no payment form on this site — donations are
+handled by an external campaign page.
+
+Paste the campaign URL into `donateUrl` in `lib/site.js` and **every** Donate
+button (header, mobile menu, footer, hero slide, every CTA band) switches to it
+and opens in a new tab with `rel="noopener noreferrer"`. Nothing else needs
+touching.
+
+While `donateUrl` is `null`, those buttons route to `/contact`, which carries
+the donation copy — "100% of Every Donation Helps Keep a Girl in School", the
+three impact cards — and tells visitors the link is being finalised. That
+notice disappears automatically once the URL is set.
 
 ---
 
