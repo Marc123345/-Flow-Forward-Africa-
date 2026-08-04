@@ -41,6 +41,140 @@
     opacity: 1;
 }
 
+/* The film plays as the background of the opening hero slide, sitting behind
+   the rose gradient (z-index 1) and the headline (z-index 3). */
+.main-slider__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    background-color: var(--ffa-plum);
+}
+
+/* "Watch the film" — sits beside the hero CTA on the video slide. */
+.main-slider .btn-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px 26px;
+}
+
+.ffa-watch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: none;
+    border: 0;
+    padding: 6px 0;
+    cursor: pointer;
+    color: var(--anity-white);
+    font-family: var(--anity-font);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: opacity 300ms ease;
+}
+
+.ffa-watch-btn:hover {
+    opacity: 0.82;
+}
+
+.ffa-watch-btn__icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(2px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding-left: 3px;
+    transition: all 300ms ease;
+}
+
+.ffa-watch-btn:hover .ffa-watch-btn__icon {
+    background: var(--anity-white);
+    color: var(--anity-base);
+    border-color: var(--anity-white);
+}
+
+/* --- Full-screen video player ------------------------------------------- */
+.ffa-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(20, 4, 11, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: ffaFadeIn 220ms ease;
+}
+
+@keyframes ffaFadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+.ffa-video-modal__frame {
+    width: min(1100px, 100%);
+    max-height: 82vh;
+    border-radius: var(--anity-bdr-radius);
+    overflow: hidden;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.ffa-video-modal__frame video {
+    display: block;
+    width: 100%;
+    max-height: 82vh;
+}
+
+.ffa-video-modal__close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--anity-white);
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+}
+
+.ffa-video-modal__close:hover {
+    background: var(--anity-white);
+    color: var(--anity-black);
+}
+
+@media (max-width: 767px) {
+    .ffa-video-modal {
+        padding: 12px;
+    }
+
+    .ffa-watch-btn {
+        font-size: 15px;
+    }
+
+    .ffa-watch-btn__icon {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+    }
+}
+
 /* Keeps the headline legible whatever photograph sits behind it — these
    photos vary a lot in brightness. */
 .main-slider-content__inner {
@@ -170,6 +304,80 @@
     }
 }
 
+/* --- Mobile navigation -------------------------------------------------- */
+/* The togglers are real <button>s now rather than <a href="#">, so strip the
+   default button chrome the template never had to deal with. */
+button.mobile-nav__toggler,
+button.mobile-nav__close {
+    background: none;
+    border: 0;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+}
+
+/* Give the hamburger a comfortable tap target (44px is the accessibility
+   minimum) without changing how it looks. */
+button.mobile-nav__toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: -10px;
+}
+
+.mobile-nav__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Stop the page behind the drawer from scrolling while it is open. */
+body.mobile-menu-visible {
+    overflow: hidden;
+}
+
+/* --- Back-to-top ------------------------------------------------------- */
+/* The template's rotated "GO BACK TOP" label is pinned to the right edge with
+   no gutter, so on narrow screens it sits on top of the body copy. Below the
+   tablet breakpoint, swap it for a compact circular button. */
+@media (max-width: 991px) {
+    .scroll-to-top {
+        transform: none;
+        right: 16px;
+        bottom: 20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--anity-base);
+        box-shadow: 0 6px 18px rgba(46, 38, 48, 0.28);
+        justify-content: center;
+    }
+
+    .scroll-to-top__text,
+    .scroll-to-top__wrapper {
+        display: none;
+    }
+
+    /* Chevron, drawn in CSS so it needs no icon font. */
+    .scroll-to-top::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid var(--anity-white);
+        border-top: 2px solid var(--anity-white);
+        transform: rotate(45deg);
+        margin-top: 3px;
+    }
+}
+
 /* --- Motion safety ------------------------------------------------------ */
 /* The template uses wow.js, which hides `.wow` elements until they scroll
    into view. If a visitor has reduced motion enabled the reveal animations
@@ -282,12 +490,25 @@
     display: block;
 }
 
-.ffa-climb__slide img {
+.ffa-climb__slide img,
+.ffa-climb__video {
     width: 100%;
     height: auto;
     aspect-ratio: 1150 / 960;
     object-fit: cover;
     display: block;
+    background-color: #2E2630;
+}
+
+/* On the video slide the caption moves to the top: the browser's native
+   controls own the bottom edge, and the two collide otherwise. A modifier
+   class rather than :has() so it works regardless of browser support. */
+.ffa-climb__slide--video figcaption {
+    top: 0;
+    bottom: auto;
+    padding: 22px 28px 60px;
+    background: linear-gradient(180deg, rgba(40, 8, 22, 0.85) 0%, rgba(40, 8, 22, 0) 100%);
+    pointer-events: none;
 }
 
 .ffa-climb__slide figcaption {

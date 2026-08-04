@@ -7,9 +7,9 @@ import { climb, kilimanjaroImage } from "@/lib/site"
 /**
  * The Kilimanjaro campaign block on the home page.
  *
- * Copy sits on the left, a carousel of climb photography on the right.
- * Slides carry their own credit line because three of the four photographs are
- * Creative Commons BY-SA and require attribution — see IMAGE-CREDITS.md.
+ * Copy sits on the left, a carousel of climb photography on the right. Slides
+ * carry their own credit line because three of the photographs are Creative
+ * Commons BY-SA and require attribution — see IMAGE-CREDITS.md.
  */
 const slides = [
     {
@@ -111,11 +111,11 @@ export default function Kilimanjaro() {
                                 </Swiper>
 
                                 <div className="ffa-climb__controls">
-                                    <button type="button" className="ffa-climb__arrow ffa-climb-prev" aria-label="Previous photo">
+                                    <button type="button" className="ffa-climb__arrow ffa-climb-prev" aria-label="Previous slide">
                                         <i className="icon-arrow-right-two"></i>
                                     </button>
                                     <div className="ffa-climb__pagination ffa-climb-pagination"></div>
-                                    <button type="button" className="ffa-climb__arrow ffa-climb-next" aria-label="Next photo">
+                                    <button type="button" className="ffa-climb__arrow ffa-climb-next" aria-label="Next slide">
                                         <i className="icon-arrow-right-two"></i>
                                     </button>
                                 </div>

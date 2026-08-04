@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { site, donateLinkProps } from "@/lib/site";
 
-const MobileMenu = ({ handleMobileMenu }) => {
+const MobileMenu = ({ handleMobileMenu, closeMobileMenu }) => {
   const [isActive, setIsActive] = useState({
     status: false,
     key: "",
@@ -19,10 +19,10 @@ const MobileMenu = ({ handleMobileMenu }) => {
 
   return (
     <>
-      <div className="mobile-nav__wrapper">
-        <div className="mobile-nav__overlay mobile-nav__toggler" onClick={handleMobileMenu}></div>
+      <div className="mobile-nav__wrapper" id="mobile-nav">
+        <div className="mobile-nav__overlay mobile-nav__toggler" onClick={closeMobileMenu} aria-hidden="true"></div>
         <div className="mobile-nav__content">
-          <span className="mobile-nav__close mobile-nav__toggler" onClick={handleMobileMenu}><i className="fa fa-times"></i></span>
+          <button type="button" className="mobile-nav__close mobile-nav__toggler" onClick={closeMobileMenu} aria-label="Close menu"><i className="fa fa-times"></i></button>
 
           <div className="logo-box">
             <Link href="/" aria-label="Flow Forward Africa home">
@@ -33,20 +33,20 @@ const MobileMenu = ({ handleMobileMenu }) => {
           <div className="mobile-nav__container">
             <div className="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
               <ul className="main-menu__list">
-                <li><Link href="/" onClick={handleMobileMenu}>Home</Link></li>
+                <li><Link href="/" onClick={closeMobileMenu}>Home</Link></li>
                 <li className={isActive.key == 1 ? "dropdown current" : "dropdown"}>
-                  <Link href="/about" onClick={handleMobileMenu}>About</Link>
+                  <Link href="/about" onClick={closeMobileMenu}>About</Link>
                   <ul style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
-                    <li><Link href="/about" onClick={handleMobileMenu}>About Flow Forward Africa</Link></li>
-                    <li><Link href="/founder" onClick={handleMobileMenu}>Meet the Founder</Link></li>
+                    <li><Link href="/about" onClick={closeMobileMenu}>About Flow Forward Africa</Link></li>
+                    <li><Link href="/founder" onClick={closeMobileMenu}>Meet the Founder</Link></li>
                   </ul>
                   <button aria-label="Toggle About submenu" className={isActive.key == 1 ? "expanded open" : ""} onClick={() => handleToggle(1)}><span className="fa fa-angle-right" /></button>
                 </li>
-                <li><Link href="/initiatives" onClick={handleMobileMenu}>Initiatives</Link></li>
-                <li><Link href="/kilimanjaro" onClick={handleMobileMenu}>Kilimanjaro Climb</Link></li>
-                <li><Link href="/blog" onClick={handleMobileMenu}>Blog</Link></li>
-                <li><Link href="/contact" onClick={handleMobileMenu}>Get Involved</Link></li>
-                <li><Link {...donateLinkProps} onClick={handleMobileMenu}>Donate</Link></li>
+                <li><Link href="/initiatives" onClick={closeMobileMenu}>Initiatives</Link></li>
+                <li><Link href="/kilimanjaro" onClick={closeMobileMenu}>Kilimanjaro Climb</Link></li>
+                <li><Link href="/blog" onClick={closeMobileMenu}>Blog</Link></li>
+                <li><Link href="/contact" onClick={closeMobileMenu}>Get Involved</Link></li>
+                <li><Link {...donateLinkProps} onClick={closeMobileMenu}>Donate</Link></li>
               </ul>
             </div>
           </div>

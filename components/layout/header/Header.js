@@ -13,7 +13,7 @@ function Social() {
     )
 }
 
-function NavInner({ handleMobileMenu }) {
+function NavInner({ handleMobileMenu, isMobileMenu }) {
     return (
         <div className="main-menu__wrapper-inner">
             <div className="main-menu__left">
@@ -23,7 +23,18 @@ function NavInner({ handleMobileMenu }) {
                     </Link>
                 </div>
                 <div className="main-menu__main-menu-box">
-                    <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu} aria-label="Open menu"><i className="fa fa-bars"></i></Link>
+                    {/* A real button, not an <a href="#">. The anchor navigated on
+                        tap, which on mobile fought with the open/close state. */}
+                    <button
+                        type="button"
+                        className="mobile-nav__toggler"
+                        onClick={handleMobileMenu}
+                        aria-label={isMobileMenu ? "Close menu" : "Open menu"}
+                        aria-expanded={isMobileMenu}
+                        aria-controls="mobile-nav"
+                    >
+                        <i className="fa fa-bars"></i>
+                    </button>
                     <Menu />
                 </div>
             </div>
@@ -38,7 +49,7 @@ function NavInner({ handleMobileMenu }) {
     )
 }
 
-export default function Header({ scroll, handleMobileMenu }) {
+export default function Header({ scroll, handleMobileMenu, closeMobileMenu, isMobileMenu }) {
     return (
         <>
             <header className="main-header">
@@ -76,7 +87,7 @@ export default function Header({ scroll, handleMobileMenu }) {
                 <nav className="main-menu">
                     <div className="main-menu__wrapper">
                         <div className="container">
-                            <NavInner handleMobileMenu={handleMobileMenu} />
+                            <NavInner handleMobileMenu={handleMobileMenu} isMobileMenu={isMobileMenu} />
                         </div>
                     </div>
                 </nav>
@@ -87,14 +98,14 @@ export default function Header({ scroll, handleMobileMenu }) {
                     <nav className="main-menu">
                         <div className="main-menu__wrapper">
                             <div className="container">
-                                <NavInner handleMobileMenu={handleMobileMenu} />
+                                <NavInner handleMobileMenu={handleMobileMenu} isMobileMenu={isMobileMenu} />
                             </div>
                         </div>
                     </nav>
                 </div>
             </div>
 
-            <MobileMenu handleMobileMenu={handleMobileMenu} />
+            <MobileMenu handleMobileMenu={handleMobileMenu} closeMobileMenu={closeMobileMenu} />
         </>
     )
 }
