@@ -5,7 +5,7 @@ import { climb, kilimanjaroImage } from "@/lib/site"
 export const metadata = {
     title: "The Kilimanjaro Climb",
     description:
-        "One mountain. Thousands of futures. Flow Forward Africa is climbing Mount Kilimanjaro to fund menstrual products, education and outreach for girls across South Africa.",
+        "One mountain. Thousands of futures. Flow Forward Africa is climbing Mount Kilimanjaro to fund menstrual products, education and outreach for girls across Africa.",
 }
 
 export default function Kilimanjaro() {
@@ -31,7 +31,7 @@ export default function Kilimanjaro() {
                         </p>
                         <p>
                             This expedition is more than a climb. It is a commitment to ensuring that girls across
-                            South Africa have access to the menstrual products, education, and support they need to
+                            Africa have access to the menstrual products, education, and support they need to
                             remain in school and reach their full potential.
                         </p>
                         <p>
@@ -81,7 +81,7 @@ export default function Kilimanjaro() {
                         </p>
                         <p>
                             Corporate partners are sponsoring every metre climbed, transforming each step up the
-                            mountain into practical support for girls across South Africa.
+                            mountain into practical support for girls across Africa.
                         </p>
                         <p>
                             Alongside our corporate sponsorships, individual supporters are helping us reach our
@@ -121,7 +121,7 @@ export default function Kilimanjaro() {
                         </p>
                         <p>
                             You can climb with us by becoming a corporate sponsor, supporting our fundraising
-                            campaign, partnering with Flow For It Africa, or sharing our mission with your
+                            campaign, partnering with Flow Forward Africa, or sharing our mission with your
                             community.
                         </p>
                         <p>

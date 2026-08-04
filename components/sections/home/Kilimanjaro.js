@@ -71,7 +71,7 @@ export default function Kilimanjaro() {
                                     <li>
                                         <strong>Every metre climbed</strong>
                                         Corporate partners are sponsoring each metre, turning every step up the
-                                        mountain into practical support for girls across South Africa.
+                                        mountain into practical support for girls across Africa.
                                     </li>
                                     <li>
                                         <strong>Every contribution counts</strong>

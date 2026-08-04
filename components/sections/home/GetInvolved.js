@@ -16,7 +16,7 @@ export default function GetInvolved() {
                                 </h3>
                                 <p className="donate-one__text">
                                     Every donation helps us provide menstrual hygiene products,<br /> deliver
-                                    educational workshops and expand our outreach<br /> programmes across South Africa.
+                                    educational workshops and expand our outreach<br /> programmes across Africa.
                                 </p>
                                 <div className="donate-one__btn-box">
                                     <DonateButton className="donate-one__btn thm-btn">Donate</DonateButton>

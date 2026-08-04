@@ -164,14 +164,20 @@ nothing to go missing. The favicon uses the same mark.
 
 ## Notes on the copy
 
-The supplied copy is used essentially verbatim. Three deliberate changes:
+The supplied copy is used essentially verbatim. Four deliberate changes, all
+confirmed with the client:
 
 1. **"Flow For It Africa" → "Flow Forward Africa".** The source text used both
-   names; the site standardises on Flow Forward Africa throughout. Worth
-   confirming which is correct.
-2. **Spelling standardised to South African English** (organisation,
+   names; the site standardises on Flow Forward Africa throughout.
+2. **"South Africa" → "Africa"** where it describes the reach of the work, so
+   the copy is not narrower than the mission. Two places deliberately keep it,
+   because there it is a fact rather than a description of scope: the Cape Town
+   postal address in `lib/site.js`, and the Section 18A wording in
+   `DonateModal.js` — 18A is a South African tax provision, and "African
+   taxpayers" would be wrong.
+3. **Spelling standardised to South African English** (organisation,
    programme, realised).
-3. **"Rather than asking people to donate simply"** was reordered to "Rather
+4. **"Rather than asking people to donate simply"** was reordered to "Rather
    than simply asking people to donate" in the Kilimanjaro blog post.
 
 The template's shop, events, volunteer-directory, testimonials, FAQ and

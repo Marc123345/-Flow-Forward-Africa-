@@ -61,7 +61,7 @@ export default function Contact() {
                         <p>
                             Whether you&rsquo;re looking to collaborate, volunteer, sponsor an initiative, or support our
                             mission through a donation, your involvement helps create more opportunities for girls
-                            across South Africa.
+                            across Africa.
                         </p>
                     </Prose>
                 </Band>
@@ -87,7 +87,7 @@ export default function Contact() {
                         <p>
                             At Flow Forward Africa, every donation helps us provide menstrual hygiene products,
                             deliver educational workshops, and expand our outreach programmes to communities across
-                            South Africa.
+                            Africa.
                         </p>
                         <p>
                             Together, we&rsquo;re creating a future where no girl&rsquo;s education is interrupted

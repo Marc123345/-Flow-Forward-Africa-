@@ -48,7 +48,7 @@ export default function Footer() {
                                         </div>
                                         <p className="footer-widget__about-text">
                                             Ending period poverty through access to menstrual products, menstrual
-                                            health education and community-led support across South Africa.
+                                            health education and community-led support across Africa.
                                         </p>
                                     </div>
                                 </div>

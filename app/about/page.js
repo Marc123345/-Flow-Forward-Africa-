@@ -56,7 +56,7 @@ export default function About() {
                     cta={{ label: "Our Initiatives", href: "/initiatives" }}
                 >
                     <p>
-                        Flow For It Africa began with a simple question: How can we create meaningful, lasting
+                        Flow Forward Africa began with a simple question: How can we create meaningful, lasting
                         change?
                     </p>
                     <p>
@@ -92,7 +92,7 @@ export default function About() {
                         <p>
                             Whether you&rsquo;re looking to collaborate, volunteer, sponsor an initiative, or support
                             our mission through a donation, your involvement helps create more opportunities for
-                            girls across South Africa.
+                            girls across Africa.
                         </p>
                         <p>
                             Together, we can keep girls in school, strengthen communities, and create a future where
