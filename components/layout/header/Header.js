@@ -1,7 +1,8 @@
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
-import { site, donateLinkProps } from "@/lib/site"
+import { site } from "@/lib/site"
+import DonateButton from "@/components/elements/DonateButton"
 
 function Social() {
     return (
@@ -40,9 +41,7 @@ function NavInner({ handleMobileMenu, isMobileMenu }) {
             </div>
             <div className="main-menu__right">
                 <div className="main-menu__btn-box">
-                    <Link {...donateLinkProps} className="main-menu__btn thm-btn">
-                        Donate<span><i className="icon-arrow-right"></i></span>
-                    </Link>
+                    <DonateButton className="main-menu__btn thm-btn">Donate</DonateButton>
                 </div>
             </div>
         </div>

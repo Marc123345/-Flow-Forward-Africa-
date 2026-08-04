@@ -7,35 +7,30 @@ import { climb, kilimanjaroImage } from "@/lib/site"
 /**
  * The Kilimanjaro campaign block on the home page.
  *
- * Copy sits on the left, a carousel of climb photography on the right. Slides
- * carry their own credit line because three of the photographs are Creative
- * Commons BY-SA and require attribution — see IMAGE-CREDITS.md.
+ * Copy sits on the left, a carousel on the right. The climb hasn't happened
+ * yet, so rather than stock mountaineering photos the carousel shows the
+ * mountain plus Flow Forward Africa's own outreach — the work the climb funds.
  */
 const slides = [
     {
         image: kilimanjaroImage(1150, 960),
         caption: `${climb.mountain} — ${climb.heightMetres.toLocaleString("en-ZA")} m`,
-        credit: null,
-    },
-    {
-        image: "/assets/images/ffa/climb-1.jpg",
-        caption: "Reaching Gilman's Point, 5,681 m",
-        credit: null,
     },
     {
         image: "/assets/images/ffa/climb-2.jpg",
-        caption: "On the route toward the Lava Tower",
-        credit: "Masa Sakano, CC BY-SA 2.0",
+        caption: "The workshops your sponsorship funds",
     },
     {
         image: "/assets/images/ffa/climb-3.jpg",
-        caption: "The team at the higher camps",
-        credit: "FokshaAnatolii, CC BY-SA 4.0",
+        caption: "Menstrual health education, delivered in schools",
+    },
+    {
+        image: "/assets/images/ffa/climb-1.jpg",
+        caption: "Information and products, in girls' hands",
     },
     {
         image: "/assets/images/ffa/climb-4.jpg",
-        caption: "Every load carried, every metre earned",
-        credit: "Sergei Andreichuk, CC BY-SA 4.0",
+        caption: "Every session begins by listening",
     },
 ]
 
@@ -101,9 +96,6 @@ export default function Kilimanjaro() {
                                                 <img src={slide.image} alt={slide.caption} />
                                                 <figcaption>
                                                     <span className="ffa-climb__caption">{slide.caption}</span>
-                                                    {slide.credit && (
-                                                        <span className="ffa-climb__credit">{slide.credit}</span>
-                                                    )}
                                                 </figcaption>
                                             </figure>
                                         </SwiperSlide>

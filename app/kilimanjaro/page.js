@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout"
 import { Band, Prose, SectionTitle, CtaBand, Split } from "@/components/elements/Blocks"
-import { climb, donateLinkProps, kilimanjaroImage } from "@/lib/site"
+import { climb, kilimanjaroImage } from "@/lib/site"
 
 export const metadata = {
     title: "The Kilimanjaro Climb",
@@ -135,7 +135,7 @@ export default function Kilimanjaro() {
 
                 <CtaBand
                     title={<>Turn every step<br /> into opportunity</>}
-                    primary={{ label: "Support the Climb", ...donateLinkProps }}
+                    primary={{ label: "Support the Climb", donate: true }}
                     secondary={{ label: "Become a Sponsor", href: "/contact" }}
                     image={kilimanjaroImage(1200, 620)}
                 />

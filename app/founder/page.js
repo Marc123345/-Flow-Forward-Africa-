@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { Band, Prose, SectionTitle, CtaBand } from "@/components/elements/Blocks"
-import { site, donateLinkProps } from "@/lib/site"
+import { site } from "@/lib/site"
 
 export const metadata = {
     title: "Meet the Founder",
@@ -87,7 +87,7 @@ export default function Founder() {
 
                 <CtaBand
                     title={<>Support the girls<br /> Lexi is fighting for</>}
-                    primary={{ label: "Donate", ...donateLinkProps }}
+                    primary={{ label: "Donate", donate: true }}
                     secondary={{ label: "Get Involved", href: "/contact" }}
                 />
             </Layout>

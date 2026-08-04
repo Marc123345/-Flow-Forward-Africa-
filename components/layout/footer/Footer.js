@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { site, donateLinkProps } from "@/lib/site"
+import { site } from "@/lib/site"
+import DonateButton from "@/components/elements/DonateButton"
 
 export default function Footer() {
     const year = new Date().getFullYear()
@@ -74,7 +75,7 @@ export default function Footer() {
                                             <li><Link href="/about">About Us</Link></li>
                                             <li><Link href="/founder">Meet the Founder</Link></li>
                                             <li><Link href="/blog">Blog</Link></li>
-                                            <li><Link {...donateLinkProps}>Donate</Link></li>
+                                            <li><DonateButton className="ffa-donate-link" showArrow={false}>Donate</DonateButton></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -123,7 +124,7 @@ export default function Footer() {
                                         <ul className="list-unstyled site-footer__bottom-menu">
                                             <li><Link href="/about">About</Link></li>
                                             <li><Link href="/contact">Get Involved</Link></li>
-                                            <li><Link {...donateLinkProps}>Donate</Link></li>
+                                            <li><DonateButton className="ffa-donate-link" showArrow={false}>Donate</DonateButton></li>
                                         </ul>
                                     </div>
                                 </div>

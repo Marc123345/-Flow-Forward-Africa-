@@ -3,7 +3,8 @@ import Link from "next/link"
 import { useRef, useState } from "react"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { donateLinkProps, kilimanjaroImage } from "@/lib/site"
+import { kilimanjaroImage } from "@/lib/site"
+import DonateButton from "@/components/elements/DonateButton"
 import VideoModal from "@/components/elements/VideoModal"
 
 // The Flow Forward Africa film, played as the background of the opening hero
@@ -47,7 +48,7 @@ const slides = [
         poster: "/assets/images/ffa/hero-1.jpg",
         eyebrow: "Ending period poverty",
         title: <>Every girl<br /> deserves the freedom<br /> to thrive</>,
-        cta: { label: "Donate", ...donateLinkProps },
+        cta: { label: "Donate", donate: true },
     },
     {
         image: kilimanjaroImage(1920, 800),
@@ -143,10 +144,14 @@ export default function Banner() {
                                                 <h2>{slide.title}</h2>
                                             </div>
                                             <div className="btn-box">
-                                                <Link {...ctaProps} className="thm-btn">
-                                                    {ctaLabel}
-                                                    <span><i className="icon-arrow-right"></i></span>
-                                                </Link>
+                                                {ctaProps.donate ? (
+                                                    <DonateButton className="thm-btn">{ctaLabel}</DonateButton>
+                                                ) : (
+                                                    <Link {...ctaProps} className="thm-btn">
+                                                        {ctaLabel}
+                                                        <span><i className="icon-arrow-right"></i></span>
+                                                    </Link>
+                                                )}
                                                 {slide.video && (
                                                     <button
                                                         type="button"

@@ -5,6 +5,7 @@ import DataBg from "../elements/DataBg"
 import Breadcrumb from './Breadcrumb'
 import Header from "./header/Header"
 import Footer from './footer/Footer'
+import DonateHost from '../elements/DonateHost'
 
 export default function Layout({ breadcrumbTitle, children, wrapperCls }) {
     const [scroll, setScroll] = useState(0)
@@ -64,6 +65,7 @@ export default function Layout({ breadcrumbTitle, children, wrapperCls }) {
                 <Footer />
             </div>
             <BackToTop scroll={scroll} />
+            <DonateHost />
         </>
     )
 }

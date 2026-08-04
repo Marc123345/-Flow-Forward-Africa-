@@ -2,7 +2,7 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import ContactForm from "@/components/elements/ContactForm"
 import { Band, Prose, SectionTitle, IconCards, CtaBand } from "@/components/elements/Blocks"
-import { site, donateLinkProps } from "@/lib/site"
+import { site } from "@/lib/site"
 
 export const metadata = {
     title: "Get Involved",
@@ -93,13 +93,10 @@ export default function Contact() {
                         <p>
                             <strong>Every contribution, regardless of its size, helps create lasting change.</strong>
                         </p>
-                        {!site.donateUrl && (
-                            <p>
-                                Our donation link is being finalised. In the meantime, get in touch using the form
-                                below and we&rsquo;ll share the details of how to give directly, sponsor an initiative,
-                                or set up a corporate contribution.
-                            </p>
-                        )}
+                        <p>
+                            Use the Donate button anywhere on this site and we&rsquo;ll ask one question first —
+                            whether you need a Section&nbsp;18A certificate — so we can send you to the right place.
+                        </p>
                     </Prose>
                 </Band>
 
@@ -137,7 +134,7 @@ export default function Contact() {
 
                 <CtaBand
                     title={<>Period poverty is a challenge<br /> we can solve together</>}
-                    primary={{ label: "Donate", ...donateLinkProps }}
+                    primary={{ label: "Donate", donate: true }}
                     secondary={{ label: "The Kilimanjaro Climb", href: "/kilimanjaro" }}
                 />
             </Layout>

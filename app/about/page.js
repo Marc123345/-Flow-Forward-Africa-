@@ -1,6 +1,5 @@
 import Layout from "@/components/layout/Layout"
 import { Band, Prose, SectionTitle, IconCards, CtaBand, Split } from "@/components/elements/Blocks"
-import { donateLinkProps } from "@/lib/site"
 
 export const metadata = {
     title: "About",
@@ -104,7 +103,7 @@ export default function About() {
 
                 <CtaBand
                     title="Join the Movement"
-                    primary={{ label: "Donate", ...donateLinkProps }}
+                    primary={{ label: "Donate", donate: true }}
                     secondary={{ label: "Get Involved", href: "/contact" }}
                 />
             </Layout>

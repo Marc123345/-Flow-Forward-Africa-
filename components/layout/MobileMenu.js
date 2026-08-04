@@ -1,7 +1,8 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
-import { site, donateLinkProps } from "@/lib/site";
+import { site } from "@/lib/site";
+import DonateButton from "@/components/elements/DonateButton";
 
 const MobileMenu = ({ handleMobileMenu, closeMobileMenu }) => {
   const [isActive, setIsActive] = useState({
@@ -46,7 +47,7 @@ const MobileMenu = ({ handleMobileMenu, closeMobileMenu }) => {
                 <li><Link href="/kilimanjaro" onClick={closeMobileMenu}>Kilimanjaro Climb</Link></li>
                 <li><Link href="/blog" onClick={closeMobileMenu}>Blog</Link></li>
                 <li><Link href="/contact" onClick={closeMobileMenu}>Get Involved</Link></li>
-                <li><Link {...donateLinkProps} onClick={closeMobileMenu}>Donate</Link></li>
+                <li><DonateButton className="ffa-donate-link" showArrow={false}>Donate</DonateButton></li>
               </ul>
             </div>
           </div>

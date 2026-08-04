@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { donateLinkProps } from "@/lib/site"
+import DonateButton from "@/components/elements/DonateButton"
 
 export default function Cta() {
     return (
@@ -15,9 +15,7 @@ export default function Cta() {
                             </h2>
                         </div>
                         <div className="cta-one__btn-box">
-                            <Link {...donateLinkProps} className="cta-one__btn-1 thm-btn">
-                                Donate<span><i className="icon-arrow-right"></i></span>
-                            </Link>
+                            <DonateButton className="cta-one__btn-1 thm-btn">Donate</DonateButton>
                             <Link href="/contact" className="cta-one__btn-2 thm-btn">
                                 Get Involved<span><i className="icon-arrow-right"></i></span>
                             </Link>

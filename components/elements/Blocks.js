@@ -1,4 +1,5 @@
 import Link from "next/link"
+import DonateButton from "./DonateButton"
 
 /**
  * Small, reusable content blocks used across the inner pages so every page
@@ -94,8 +95,12 @@ export function CtaBand({ title, primary, secondary, image = "/assets/images/ffa
                         <h2 className="cta-one__title title-animation">{title}</h2>
                     </div>
                     <div className="cta-one__btn-box">
-                        {primary && (() => { const { label, ...p } = primary; return <Btn {...p} className="cta-one__btn-1 thm-btn">{label}</Btn> })()}
-                        {secondary && (() => { const { label, ...s } = secondary; return <Btn {...s} className="cta-one__btn-2 thm-btn">{label}</Btn> })()}
+                        {primary && (primary.donate
+                            ? <DonateButton className="cta-one__btn-1 thm-btn">{primary.label}</DonateButton>
+                            : (() => { const { label, ...p } = primary; return <Btn {...p} className="cta-one__btn-1 thm-btn">{label}</Btn> })())}
+                        {secondary && (secondary.donate
+                            ? <DonateButton className="cta-one__btn-2 thm-btn">{secondary.label}</DonateButton>
+                            : (() => { const { label, ...s } = secondary; return <Btn {...s} className="cta-one__btn-2 thm-btn">{label}</Btn> })())}
                     </div>
                 </div>
             </div>

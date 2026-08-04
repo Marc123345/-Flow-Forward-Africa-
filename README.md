@@ -18,7 +18,7 @@ These are the open items. Everything else is finished.
 
 | # | Item | Where to change it |
 |---|------|--------------------|
-| 1 | **Photography is royalty-free stock, not FFA's own work.** Fine to launch with; replace as real photos arrive. | `public/assets/images/ffa/` — see [Photography](#photography) |
+| 1 | **Founder portrait** is still a placeholder, and the Kilimanjaro shot is stock. All other photography is FFA's own. | `public/assets/images/ffa/` — see [Photography](#photography) |
 | 2 | **Contact email.** Currently `hello@flowforwardafrica.org` (invented). | `lib/site.js` → `email` |
 | 3 | **Phone number.** Omitted everywhere (set to `null`); the UI hides it until you add one. | `lib/site.js` → `phone` |
 | 4 | **Social links.** All point at `#`. | `lib/site.js` → `social` |
@@ -77,86 +77,40 @@ example.
 
 ## Photography
 
-Every photograph is **royalty-free stock** licensed CC0 or Public Domain Mark,
-sourced through [Openverse](https://openverse.org) from Wikimedia Commons and
-Flickr. Neither licence requires attribution, but full provenance for every
-file is recorded in **[IMAGE-CREDITS.md](IMAGE-CREDITS.md)**.
+All photography is **Flow Forward Africa's own**, from a real workshop —
+supplied by the organisation and cropped to each slot. No stock, no attribution
+required. Full slot-by-slot detail is in
+**[IMAGE-CREDITS.md](IMAGE-CREDITS.md)**.
 
-> **These photographs show other organisations' programmes, not Flow Forward
-> Africa's.** They illustrate the kind of work each page describes. That is
-> normal practice, but it is worth being deliberate about: swap in FFA's own
-> photography as it becomes available, and make sure consent is in place for
-> any identifiable person — especially minors.
+Files live in `public/assets/images/ffa/` and are referenced by filename in the
+page components, so replacing one is a straight overwrite — same name, roughly
+the same aspect ratio, nothing else to change.
 
-Files live in `public/assets/images/ffa/` and are referenced directly by
-filename in the page components, so replacing one is a straight overwrite (keep
-the same name and roughly the same aspect ratio and nothing else needs to
-change).
+**Consent matters here.** These are identifiable young people, many of them
+minors. Confirm the workshop consent covers website and social publication.
 
-| File | Size | Shows | Used on |
-|------|------|-------|---------|
-| `hero-1.jpg` | 1920×800 | Girls' group session outdoors | Home hero, slide 1 |
-| `hero-2.jpg` | 1920×800 | Girls together, outdoors | Home hero, slide 3 |
-| `about-1.jpg` | 1140×1200 | Outreach worker with girls | Home — About collage |
-| `about-2.jpg` | 740×680 | Small group reading together | Home — About collage |
-| `story-1.jpg` | 1200×1120 | Community session | About — Our Story |
-| `initiative-education.jpg` | 820×740 | Session under a shelter | Initiatives |
-| `initiative-products.jpg` | 820×740 | Menstrual products being handed out | Initiatives |
-| `initiative-partners.jpg` | 820×740 | Health worker with materials | Initiatives |
-| *(ImageKit)* | any | **Mount Kilimanjaro** — used everywhere the mountain appears | Home hero, carousel slide 1, Kilimanjaro page, climb blog post |
-| `climb-1.jpg` | 1150×960 | Climber at Gilman's Point | Home — Kilimanjaro carousel |
-| `climb-2.jpg` | 1150×960 | Trekkers heading for the Lava Tower | Home — Kilimanjaro carousel |
-| `climb-3.jpg` | 1150×960 | The team at the higher camps | Home — Kilimanjaro carousel |
-| `climb-4.jpg` | 1150×960 | A woman porter on the mountain | Home — Kilimanjaro carousel |
-| `blog-listening.jpg` | 1200×750 | Large group seated outdoors | Blog post 1 |
-| `donate-wide.jpg` | 1800×840 | Girl smiling with a certificate | Home — Get Involved |
-| `cta-wide.jpg` | 1920×500 | Table Mountain, Cape Town | Closing CTA bands |
-| `page-header-bg.jpg` | 1920×550 | Table Mountain, Cape Town | All inner-page banners |
-
-`founder.svg` is **still a branded placeholder on purpose.** It marks a portrait
-of Alexia (Lexi) Levy — a real, named person — and putting a stock photograph of
-someone else there would misrepresent her. It needs an actual photo of Lexi.
-
-**The mountain itself is one image, served from ImageKit.** Every place the
-site shows Mount Kilimanjaro pulls from
-`kilimanjaroImage(width, height)` in `lib/site.js`, which points at a single
-photograph on Flow Forward Africa's ImageKit account and lets ImageKit crop and
-convert it per slot. To change the mountain photo everywhere, change that one
-URL. The source is portrait, so the helper crops from the top — see the comment
-in `lib/site.js` before altering it.
-
-**Three of the carousel photos need attribution.** `climb-2`, `climb-3` and
-`climb-4` are CC BY-SA, so each slide renders a small credit line over the
-image. Those credits are required by the licence — don't delete them without
-swapping the photograph out. Everything else on the site is attribution-free.
-
-**Two things to know when swapping images:**
-
-- The hero and page-header sit under a rose gradient with white type over them.
-  If you drop in a much brighter photo, check the headline still reads; the
-  gradient stops are commented in `brand.css` under `--- Hero ---` and
-  `--- Page header ---`.
-- Images total ~3.9 MB. macOS `sips` (used to crop and encode these) has no WebP
-  encoder, so they are all JPEG. Converting to WebP/AVIF, or moving the `<img>`
-  tags to `next/image`, would cut that substantially — worth doing before launch
-  if page weight matters.
-
----
+**Still outstanding:** `founder.svg` is a placeholder for a portrait of Alexia
+(Lexi) Levy — it needs a real photograph of her. And Mount Kilimanjaro is still
+a stock image (the climb hasn't happened); swap in the team's own summit photos
+afterwards.
 
 ## Donations
 
-There is no donation page and no payment form on this site — donations are
-handled by an external campaign page.
+There is no donation page and no payment form on this site. Every Donate
+button opens a chooser asking **"Do you need a Section 18A certificate?"**,
+because the destination differs:
 
-Paste the campaign URL into `donateUrl` in `lib/site.js` and **every** Donate
-button (header, mobile menu, footer, hero slide, every CTA band) switches to it
-and opens in a new tab with `rel="noopener noreferrer"`. Nothing else needs
-touching.
+| Answer | Goes to |
+|--------|---------|
+| Yes — needs the SARS tax-deductible receipt | GivenGain campaign |
+| No | *Awaiting link — shown as "coming soon" and not clickable* |
 
-While `donateUrl` is `null`, those buttons route to `/contact`, which carries
-the donation copy — "100% of Every Donation Helps Keep a Girl in School", the
-three impact cards — and tells visitors the link is being finalised. That
-notice disappears automatically once the URL is set.
+Both URLs live in `site.donate` in `lib/site.js`. Fill in
+`withoutCertificate` and that option becomes live automatically; until then it
+is deliberately inert rather than pointing somewhere wrong.
+
+The chooser is `components/elements/DonateModal.js`, opened by any
+`DonateButton` via a window event, with the host mounted once in `Layout`.
 
 ---
 
