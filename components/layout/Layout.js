@@ -36,11 +36,21 @@ export default function Layout({ breadcrumbTitle, children, wrapperCls }) {
     }, [isMobileMenu])
 
     useEffect(() => {
-        const WOW = require('wowjs')
-        window.wow = new WOW.WOW({
-            live: false
-        })
-        window.wow.init()
+        // Scroll reveals are skipped on phones and for anyone who has asked for
+        // reduced motion. wow.js hides every `.wow` element until it fires, so
+        // when it is not initialised the CSS has to reveal them instead — see
+        // the matching rules in brand.css.
+        const skipReveals = window.matchMedia(
+            "(max-width: 991px), (prefers-reduced-motion: reduce)"
+        ).matches
+
+        if (!skipReveals) {
+            const WOW = require('wowjs')
+            window.wow = new WOW.WOW({
+                live: false
+            })
+            window.wow.init()
+        }
 
         const onScroll = () => setScroll(window.scrollY > 100)
         onScroll()

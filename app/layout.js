@@ -5,6 +5,7 @@ import "swiper/css/pagination"
 import 'swiper/css/free-mode'
 import { dmSans, libreBaskerville } from '@/lib/font'
 import { site } from '@/lib/site'
+import SiteLoader from '@/components/elements/SiteLoader'
 
 export const metadata = {
     metadataBase: new URL(site.url),
@@ -29,7 +30,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en-ZA" className={`${dmSans.variable} ${libreBaskerville.variable}`}>
-            <body>{children}</body>
+            <head>
+                {/* Without JavaScript the loader can never dismiss itself, so
+                    make sure it is simply not shown. */}
+                <noscript>
+                    <style>{`.ffa-loader{display:none!important}`}</style>
+                </noscript>
+            </head>
+            <body>
+                <SiteLoader />
+                {children}
+            </body>
         </html>
     )
 }

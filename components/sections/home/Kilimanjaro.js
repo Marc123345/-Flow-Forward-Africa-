@@ -14,7 +14,7 @@ import { climb, kilimanjaroImage } from "@/lib/site"
 const slides = [
     {
         image: kilimanjaroImage(1150, 960),
-        caption: `${climb.mountain} — ${climb.heightMetres.toLocaleString("en-ZA")} m`,
+        caption: `${climb.mountain} — ${climb.heightLabel} m`,
     },
     {
         image: "/assets/images/ffa/climb-2.jpg",
@@ -63,7 +63,7 @@ export default function Kilimanjaro() {
                                 <p className="ffa-climb__text">
                                     At {climb.when}, Flow Forward Africa will take on one of Africa&rsquo;s greatest
                                     challenges: climbing {climb.mountain}. Standing at{" "}
-                                    {climb.heightMetres.toLocaleString("en-ZA")} metres above sea level, it is a test
+                                    {climb.heightLabel} metres above sea level, it is a test
                                     of resilience, determination and purpose. For us, it represents something even
                                     greater.
                                 </p>
