@@ -1,0 +1,302 @@
+/* ---------------------------------------------------------------------------
+   Flow Forward Africa — brand overrides.
+
+   The base Anity theme colours were swapped in place (style.css / module-css).
+   This file holds the layout + typography tweaks specific to Flow Forward
+   Africa, so the template stylesheets stay close to the vendor original.
+   Loaded after style.css.
+--------------------------------------------------------------------------- */
+
+:root {
+    --ffa-blush: #FBF3F6;
+    --ffa-plum: #2E2630;
+}
+
+/* --- Logo sizing (SVG wordmark is wider than the template's PNG) --------- */
+.main-menu__logo img,
+.footer-widget__about-logo img {
+    width: 220px;
+    height: auto;
+    max-width: 100%;
+}
+
+.mobile-nav__content .logo-box img {
+    width: 190px;
+    height: auto;
+}
+
+/* --- Hero -------------------------------------------------------------- */
+/* The template washes the hero photo with a rainbow gradient image. Replaced
+   with a brand wash: rich on the left so the white headline reads, clearing
+   to the right so the photograph shows. */
+.main-slider .image-layer__left-gradient {
+    background-image: linear-gradient(
+        90deg,
+        rgba(40, 8, 22, 0.92) 0%,
+        rgba(58, 12, 32, 0.82) 22%,
+        rgba(96, 22, 52, 0.55) 42%,
+        rgba(140, 32, 74, 0.2) 58%,
+        rgba(196, 50, 107, 0) 72%
+    );
+    opacity: 1;
+}
+
+/* Keeps the headline legible whatever photograph sits behind it — these
+   photos vary a lot in brightness. */
+.main-slider-content__inner {
+    position: relative;
+    z-index: 3;
+}
+
+.main-slider-content .big-title h2,
+.main-slider .sub-title h4 {
+    text-shadow: 0 2px 18px rgba(30, 6, 16, 0.45);
+}
+
+.main-slider .sub-title h4 {
+    color: var(--anity-white);
+    opacity: 0.92;
+}
+
+/* Give hero copy a little more room to breathe on long headlines. */
+.main-slider-content .big-title h2 {
+    max-width: 15ch;
+}
+
+/* --- Page header (inner-page banner) ------------------------------------ */
+/* The template desaturates the banner image (opacity .2 + luminosity blend)
+   because it expects a photograph. Our banner is a brand gradient, so show it
+   as-is and tint it instead.
+   NOTE: if you swap in a real photograph here, either pick a dark image or
+   raise the ::after overlay opacity below so the white heading stays legible. */
+.page-header__bg {
+    opacity: 1;
+    background-blend-mode: normal;
+    background-color: transparent;
+}
+
+.page-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(62, 16, 40, 0.55) 0%, rgba(122, 34, 73, 0.35) 100%);
+    z-index: -1;
+}
+
+/* --- Footer "Join the Movement" strip ----------------------------------- */
+/* Replaces the template's newsletter form, so lay the right column out as
+   text + button rather than input + button. */
+.site-footer__newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.site-footer__newsletter-text {
+    color: var(--anity-white);
+    margin: 0;
+    font-size: 17px;
+    line-height: 28px;
+    max-width: 34ch;
+}
+
+.site-footer__newsletter-btn {
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .site-footer__newsletter-content {
+        justify-content: flex-start;
+    }
+}
+
+/* --- Long-form article copy -------------------------------------------- */
+.ffa-prose p {
+    margin-bottom: 22px;
+}
+
+.ffa-prose h3 {
+    font-family: var(--anity-font-two);
+    color: var(--anity-black);
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.ffa-prose h4 {
+    font-family: var(--anity-font-two);
+    color: var(--anity-black);
+    font-size: 22px;
+    line-height: 32px;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+.ffa-prose p:last-child {
+    margin-bottom: 0;
+}
+
+/* A quiet pull-quote for the key lines in the supplied copy. */
+.ffa-pullquote {
+    border-left: 3px solid var(--anity-base);
+    padding: 6px 0 6px 28px;
+    margin: 34px 0;
+    font-family: var(--anity-font-two);
+    font-size: 22px;
+    line-height: 36px;
+    color: var(--anity-black);
+}
+
+/* --- Plain section band (used for copy-only sections) ------------------- */
+.ffa-band {
+    padding: 100px 0;
+}
+
+.ffa-band--blush {
+    background-color: var(--ffa-blush);
+}
+
+.ffa-band--tight {
+    padding: 80px 0;
+}
+
+@media (max-width: 767px) {
+    .ffa-band,
+    .ffa-band--tight {
+        padding: 70px 0;
+    }
+}
+
+/* --- Motion safety ------------------------------------------------------ */
+/* The template uses wow.js, which hides `.wow` elements until they scroll
+   into view. If a visitor has reduced motion enabled the reveal animations
+   are pointless — make sure the content is simply visible instead. */
+@media (prefers-reduced-motion: reduce) {
+    .wow,
+    .animated {
+        visibility: visible !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* --- Card grids --------------------------------------------------------- */
+/* Our copy runs longer than the template's lorem, so let cards in a row
+   match heights instead of stepping raggedly. */
+.feature-one__single,
+.found-one__single {
+    height: calc(100% - 30px);
+}
+
+.found-one__single {
+    display: flex;
+    flex-direction: column;
+}
+
+.found-one__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.blog-one__single {
+    height: calc(100% - 30px);
+}
+
+/* --- Image / copy split section ----------------------------------------- */
+.ffa-split {
+    padding: 100px 0;
+}
+
+.ffa-split__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--anity-bdr-radius);
+}
+
+.ffa-split__copy {
+    padding-left: 30px;
+}
+
+.row > [class*="col-"]:first-child .ffa-split__copy {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.ffa-split__btn {
+    margin-top: 34px;
+}
+
+@media (max-width: 991px) {
+    .ffa-split {
+        padding: 70px 0;
+    }
+
+    .ffa-split__copy,
+    .row > [class*="col-"]:first-child .ffa-split__copy {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 40px;
+    }
+}
+
+/* --- Simple checkmark list --------------------------------------------- */
+.ffa-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ffa-list li {
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 16px;
+    color: var(--anity-gray);
+    line-height: 30px;
+}
+
+.ffa-list li:last-child {
+    margin-bottom: 0;
+}
+
+.ffa-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--anity-base);
+}
+
+.ffa-list li strong {
+    color: var(--anity-black);
+    display: block;
+    font-weight: 700;
+}
+
+/* On dark panels (the "Ways to Give" block) the default dark label would be
+   invisible, so flip the list to light type. */
+.donation-one__right .ffa-list li,
+.donation-one__right .ffa-prose p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.donation-one__right .ffa-list li strong {
+    color: var(--anity-white);
+}
+
+/* --- Placeholder photography ------------------------------------------- */
+/* Branded SVG stand-ins ship in /assets/images/ffa/. They are sized by the
+   template's own rules; this just guarantees they fill their frame. */
+.ffa-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 74" width="320" height="74" role="img" aria-label="Flow Forward Africa">
+  <defs>
+    <linearGradient id="ffaMarkLight" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#E0698F"/>
+      <stop offset="1" stop-color="#F5A9C0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: three rising strokes forming a flow moving forward -->
+  <g transform="translate(4 10)">
+    <path d="M2 46c0-16 8-27 22-33" fill="none" stroke="#F0A536" stroke-width="6" stroke-linecap="round"/>
+    <path d="M14 50c0-19 10-32 27-39" fill="none" stroke="url(#ffaMarkLight)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M28 52c0-22 12-37 32-45" fill="none" stroke="#E0698F" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="61" cy="8" r="6.5" fill="#E0698F"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="84" y="36" font-family="'Libre Baskerville', Georgia, serif" font-size="25" font-weight="700" fill="#FFFFFF" letter-spacing="-0.2">Flow Forward</text>
+  <text x="86" y="57" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="500" fill="#F5A9C0" letter-spacing="5.4">AFRICA</text>
+</svg>
