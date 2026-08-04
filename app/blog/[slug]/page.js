@@ -44,7 +44,7 @@ export default function BlogPost({ params }) {
                             <div className="col-xl-9 col-lg-10">
                                 <div className="blog-details__left">
                                     <div className="blog-details__img">
-                                        <img className="ffa-photo" src={post.image} alt="" />
+                                        <img className="ffa-photo" src={post.image} alt="" loading="lazy" decoding="async" />
                                     </div>
                                     <div className="blog-details__content">
                                         <ul className="blog-details__meta list-unstyled">

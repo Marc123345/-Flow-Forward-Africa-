@@ -4,15 +4,21 @@ import { useEffect, useState } from "react"
 /**
  * Full-screen loading screen: the logo, a 0–100 counter and a progress bar.
  *
- * The percentage is tied to real signals rather than a fixed animation — how
- * many images have finished decoding, plus the document's own readyState — so
- * it broadly tracks what the browser is actually doing. It eases towards that
- * target rather than jumping, and never runs ahead of 92% until the window
- * `load` event fires.
+ * It deliberately does NOT wait for the page to finish loading. `window.load`
+ * does not fire until every image has arrived, and the home page carries a
+ * dozen photographs — on mobile data that meant staring at this screen for
+ * many seconds while content that was ready to show sat hidden behind it. The
+ * loader now clears as soon as the document is usable and lets the imagery
+ * stream in behind it.
  *
- * Two safety valves, because a loader that gets stuck hides the whole site:
- *   - an 8 second cap forces it to finish regardless
- *   - a <noscript> rule in the root layout hides it when JS is unavailable
+ * So the timings are ceilings, not targets:
+ *   RELEASE_CAP  hand the page over by now, loaded or not
+ *   HARD_CAP     dismiss unconditionally, even if a frame never fires
+ *
+ * The second one runs on a timer rather than an animation frame on purpose:
+ * requestAnimationFrame is throttled — or never fires at all — in a
+ * backgrounded tab, so the animation alone cannot be trusted to reach the end.
+ * A <noscript> rule in the root layout covers the no-JavaScript case.
  *
  * Mounted in the root layout, so it appears once on first load and not again
  * on client-side navigation between pages.
@@ -26,15 +32,22 @@ export default function SiteLoader() {
         // On a warm cache the page can be ready before the first frame, which
         // would flash "100%" and vanish. Hold it open long enough for the count
         // to actually read as a count.
-        const MIN_VISIBLE = reduceMotion ? 0 : 900
+        const MIN_VISIBLE = reduceMotion ? 0 : 700
+        // Ceilings, not targets — see the note above the component.
+        const RELEASE_CAP = 2500
+        const HARD_CAP = 4000
         const started = performance.now()
         let frame
         let loaded = false
         let done = false
 
-        // Roughly how far along the browser actually is.
+        // Roughly how far along the browser actually is. Lazy images that have
+        // not been reached yet are ignored, or they would peg this near zero
+        // for the whole visit.
         const measured = () => {
-            const images = Array.from(document.images)
+            const images = Array.from(document.images).filter(
+                (img) => img.loading !== "lazy" || img.complete
+            )
             const decoded = images.filter((img) => img.complete).length
             const imageRatio = images.length ? decoded / images.length : 1
             const docRatio =
@@ -52,8 +65,6 @@ export default function SiteLoader() {
 
         const tick = (now) => {
             const elapsed = now - started
-            // Free to run to 100 only once loading finished AND the minimum
-            // display time has passed; until then hold short of the end.
             const released = loaded && elapsed >= MIN_VISIBLE
             const ceiling = released ? 100 : 92
             setProgress((current) => {
@@ -66,36 +77,41 @@ export default function SiteLoader() {
                 const step = Math.max(released ? 2.5 : 0.6, (target - current) * 0.14)
                 return Math.min(target, current + step)
             })
-            if (released) {
-                // Give the fill a frame at 100 before fading out.
-                setProgress((current) => {
-                    if (current >= 99.5) window.setTimeout(dismiss, 0)
-                    return current
-                })
-            }
             if (!done) frame = requestAnimationFrame(tick)
         }
         frame = requestAnimationFrame(tick)
 
-        const onLoaded = () => { loaded = true }
-        if (document.readyState === "complete") onLoaded()
-        else window.addEventListener("load", onLoaded, { once: true })
-
-        // Safety valves, because a loader that gets stuck hides the whole site.
-        // The second one runs on a timer rather than a frame: requestAnimationFrame
-        // is throttled (or never fires) in a backgrounded tab, so the animation
-        // alone cannot be trusted to reach the end.
-        const cap = window.setTimeout(onLoaded, 8000)
-        const hardCap = window.setTimeout(() => {
+        // Finishing is driven by timers, not by the animation loop. Frames are
+        // throttled on low-end and backgrounded mobile browsers, and when they
+        // crawl the counter never reaches the end — so anything that waited on
+        // the animation would leave the overlay sitting there.
+        const finish = () => {
             setProgress(100)
             dismiss()
-        }, 10000)
+        }
+
+        let releaseTimer
+        const release = () => {
+            if (loaded) return
+            loaded = true
+            const remaining = Math.max(0, MIN_VISIBLE - (performance.now() - started))
+            releaseTimer = window.setTimeout(finish, remaining)
+        }
+        // The document being usable is enough; the photographs can follow.
+        if (document.readyState !== "loading") release()
+        else document.addEventListener("DOMContentLoaded", release, { once: true })
+        window.addEventListener("load", release, { once: true })
+
+        const cap = window.setTimeout(release, RELEASE_CAP)
+        const hardCap = window.setTimeout(finish, HARD_CAP)
 
         return () => {
             cancelAnimationFrame(frame)
+            window.clearTimeout(releaseTimer)
             window.clearTimeout(cap)
             window.clearTimeout(hardCap)
-            window.removeEventListener("load", onLoaded)
+            window.removeEventListener("load", release)
+            document.removeEventListener("DOMContentLoaded", release)
         }
     }, [])
 

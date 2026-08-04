@@ -25,7 +25,7 @@ export default function Blog() {
                                     <div className="blog-one__single">
                                         <div className="blog-one__img-box">
                                             <div className="blog-one__img">
-                                                <img className="ffa-photo" src={post.image} alt="" />
+                                                <img className="ffa-photo" src={post.image} alt="" loading="lazy" decoding="async" />
                                             </div>
                                             <div className="blog-one__date">
                                                 <p>

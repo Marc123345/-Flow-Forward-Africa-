@@ -64,7 +64,7 @@ export default function Initiatives() {
                                     <div className="found-one__single">
                                         <div className="found-one__img-box">
                                             <div className="found-one__img">
-                                                <img className="ffa-photo" src={item.image} alt="" />
+                                                <img className="ffa-photo" src={item.image} alt="" loading="lazy" decoding="async" />
                                             </div>
                                         </div>
                                         <div className="found-one__content">

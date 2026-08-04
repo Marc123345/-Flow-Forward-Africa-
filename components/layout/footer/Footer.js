@@ -43,7 +43,7 @@ export default function Footer() {
                                     <div className="footer-widget__about">
                                         <div className="footer-widget__about-logo">
                                             <Link href="/" aria-label="Flow Forward Africa home">
-                                                <img src="/assets/images/resources/logo-2.svg" alt="Flow Forward Africa" />
+                                                <img src="/assets/images/resources/logo-2.svg" alt="Flow Forward Africa" loading="lazy" decoding="async" />
                                             </Link>
                                         </div>
                                         <p className="footer-widget__about-text">

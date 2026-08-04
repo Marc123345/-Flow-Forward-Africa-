@@ -113,7 +113,7 @@ export function Split({ image, imageAlt = "", tagline, title, children, reverse 
     const media = (
         <div className={`col-xl-6 col-lg-6 wow ${reverse ? "slideInRight" : "slideInLeft"}`} data-wow-delay="100ms" data-wow-duration="2500ms">
             <div className="ffa-split__media">
-                <img className="ffa-photo" src={image} alt={imageAlt} />
+                <img className="ffa-photo" src={image} alt={imageAlt} loading="lazy" decoding="async" />
             </div>
         </div>
     )

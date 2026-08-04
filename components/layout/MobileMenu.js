@@ -27,7 +27,7 @@ const MobileMenu = ({ handleMobileMenu, closeMobileMenu }) => {
 
           <div className="logo-box">
             <Link href="/" aria-label="Flow Forward Africa home">
-              <img src="/assets/images/resources/logo-2.svg" width="190" alt="Flow Forward Africa" />
+              <img src="/assets/images/resources/logo-2.svg" width="190" alt="Flow Forward Africa" loading="lazy" decoding="async" />
             </Link>
           </div>
 

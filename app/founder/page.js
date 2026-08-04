@@ -18,7 +18,7 @@ export default function Founder() {
                             <div className="col-xl-5 col-lg-6">
                                 <div className="volunteer-details__left">
                                     <div className="volunteer-details__img">
-                                        <img className="ffa-photo" src="/assets/images/ffa/founder.jpg" alt="Alexia (Lexi) Levy" />
+                                        <img className="ffa-photo" src="/assets/images/ffa/founder.jpg" alt="Alexia (Lexi) Levy" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>

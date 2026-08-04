@@ -31,10 +31,10 @@ export default function About() {
                             <div className="about-One__left wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                                 <div className="about-One__img-box">
                                     <div className="about-One__img">
-                                        <img className="ffa-photo" src="/assets/images/ffa/about-1.jpg" alt="" />
+                                        <img className="ffa-photo" src="/assets/images/ffa/about-1.jpg" alt="" loading="lazy" decoding="async" />
                                     </div>
                                     <div className="about-One__img-2">
-                                        <img className="ffa-photo" src="/assets/images/ffa/about-2.jpg" alt="" />
+                                        <img className="ffa-photo" src="/assets/images/ffa/about-2.jpg" alt="" loading="lazy" decoding="async" />
                                     </div>
                                     <div className="about-One__provide-box wow zoomIn animated" data-wow-delay="500ms" data-wow-duration="2500ms">
                                         <div className="about-One__provide-icon">

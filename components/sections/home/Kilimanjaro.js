@@ -93,7 +93,7 @@ export default function Kilimanjaro() {
                                     {slides.map((slide) => (
                                         <SwiperSlide key={slide.image}>
                                             <figure className="ffa-climb__slide">
-                                                <img src={slide.image} alt={slide.caption} />
+                                                <img src={slide.image} alt={slide.caption} loading="lazy" decoding="async" />
                                                 <figcaption>
                                                     <span className="ffa-climb__caption">{slide.caption}</span>
                                                 </figcaption>

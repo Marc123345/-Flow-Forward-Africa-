@@ -31,6 +31,16 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en-ZA" className={`${dmSans.variable} ${libreBaskerville.variable}`}>
             <head>
+                {/* The first hero frame is a CSS background applied inline, so
+                    the browser would not discover it until stylesheets and
+                    scripts had been dealt with. It is the largest thing on the
+                    page and the one people are waiting for — start it early. */}
+                <link
+                    rel="preload"
+                    as="image"
+                    href="/assets/images/ffa/hero-1.jpg"
+                    fetchPriority="high"
+                />
                 {/* Without JavaScript the loader can never dismiss itself, so
                     make sure it is simply not shown. */}
                 <noscript>
