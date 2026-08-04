@@ -1331,7 +1331,7 @@ ul {
   line-height: 30px;
   color: #ffffff;
   font-size: 14px;
-  font-family: var(--anity-font, "Rubik", sans-serif);
+  font-family: var(--anity-font);
   font-weight: 500;
   height: 46px;
   -webkit-box-align: center;
