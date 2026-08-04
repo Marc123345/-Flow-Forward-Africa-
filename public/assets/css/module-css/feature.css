@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    background-color: #F7DEE7;
+    background-color: #F9E3DF;
     border-radius: var(--anity-bdr-radius);
     padding: 59px 40px 57px;
     margin-bottom: 30px;
@@ -26,11 +26,11 @@
 }
 
 .feature-one__single-2 {
-    background-color: #FBEBD6;
+    background-color: #F3D2CB;
 }
 
 .feature-one__single-3 {
-    background-color: #D8F0ED;
+    background-color: #EBC0B8;
 }
 
 .feature-one__icon {

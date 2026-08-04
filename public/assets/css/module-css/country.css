@@ -55,7 +55,7 @@
     bottom: 0px;
     border-radius: 50%;
     border: 1px solid transparent;
-    background: linear-gradient(180deg, #C4326B, #16171A) border-box;
+    background: linear-gradient(180deg, #A93F3E, #16171A) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;

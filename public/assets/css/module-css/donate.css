@@ -587,12 +587,12 @@
 }
 
 .donation-one__right--style2 .donation-one__content-box {
-    background-image: -ms-linear-gradient(left, #C4326B 0%, #F0A536 100%);
-    background-image: -moz-linear-gradient(left, #C4326B 0%, #F0A536 100%);
-    background-image: -o-linear-gradient(left, #C4326B 0%, #F0A536 100%);
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #C4326B), color-stop(100, #F0A536));
-    background-image: -webkit-linear-gradient(left, #C4326B 0%, #F0A536 100%);
-    background-image: linear-gradient(to right, #C4326B 0%, #F0A536 100%);
+    background-image: -ms-linear-gradient(left, #A93F3E 0%, #CE837C 100%);
+    background-image: -moz-linear-gradient(left, #A93F3E 0%, #CE837C 100%);
+    background-image: -o-linear-gradient(left, #A93F3E 0%, #CE837C 100%);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #A93F3E), color-stop(100, #CE837C));
+    background-image: -webkit-linear-gradient(left, #A93F3E 0%, #CE837C 100%);
+    background-image: linear-gradient(to right, #A93F3E 0%, #CE837C 100%);
 }
 
 .donation-one__right--style2 .donation-one__donate-box .donate-amount .amount-btn {

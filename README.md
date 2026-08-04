@@ -136,20 +136,33 @@ discards enquiries is worse than no form.
 Colours were swapped throughout the vendor CSS (not overridden), so hover
 states, gradients and tints are all consistent:
 
-| Role | Anity original | Flow Forward Africa |
-|------|----------------|---------------------|
-| Base / primary | `#FF5528` orange | `#C4326B` rose |
-| Accent | `#FFA415` amber | `#F0A536` warm gold |
-| Secondary | `#26CC8C` green | `#2FA79B` teal |
-| Text / dark | `#343434` | `#2E2630` plum-charcoal |
+Flow Forward Africa's palette is monochromatic — blush through to deep
+burgundy — so the site reads as one warm red family rather than rose + gold +
+teal:
+
+| Swatch | Hex | Used for |
+|--------|-----|----------|
+| Blush pink | `#F5C6BE` | lightest card tint |
+| Dusty rose | `#E0A29A` | footer accent type |
+| Terracotta rose | `#CE837C` | secondary accent (`--anity-primary`) |
+| Muted brick | `#BC6059` | tertiary accent (`--anity-extra`) |
+| Brick red | `#A93F3E` | **primary** — buttons, links (`--anity-base`) |
+| Crimson / wine | `#932A31` | hover + gradient midpoint |
+| Deep burgundy | `#7A1428` | hero wash, dark surfaces (`--ffa-plum`) |
+
+Warm near-black `#2E1B1D` carries headings and body text
+(`--anity-black`), and `#FDF4F2` is the blush section background
+(`--ffa-blush`).
 
 Fonts are the template's originals and suit the brand well: **Libre
 Baskerville** for headings, **DM Sans** for body.
 
-The logo is an SVG wordmark in `public/assets/images/resources/`
-(`logo-1.svg` for light backgrounds, `logo-2.svg` for dark). If Flow Forward
-Africa has its own logo, replace those two files and delete the width rules at
-the top of `brand.css`.
+The logo is Flow Forward Africa's own heart-and-hands mark, supplied as a
+transparent PNG, locked up with a wordmark in SVG:
+`logo-1.svg` (dark type, for light backgrounds) and `logo-2.svg` (white type
+and a white knockout of the mark, for the footer and mobile drawer). The mark
+is embedded in each SVG as a data URI, so there is one file per variant and
+nothing to go missing. The favicon uses the same mark.
 
 ---
 

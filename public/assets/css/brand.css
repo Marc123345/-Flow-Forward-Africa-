@@ -8,8 +8,8 @@
 --------------------------------------------------------------------------- */
 
 :root {
-    --ffa-blush: #FBF3F6;
-    --ffa-plum: #2E2630;
+    --ffa-blush: #FDF4F2;
+    --ffa-plum: #7A1428;
 }
 
 /* --- Logo sizing (SVG wordmark is wider than the template's PNG) --------- */
@@ -32,11 +32,11 @@
 .main-slider .image-layer__left-gradient {
     background-image: linear-gradient(
         90deg,
-        rgba(40, 8, 22, 0.92) 0%,
-        rgba(58, 12, 32, 0.82) 22%,
-        rgba(96, 22, 52, 0.55) 42%,
-        rgba(140, 32, 74, 0.2) 58%,
-        rgba(196, 50, 107, 0) 72%
+        rgba(60, 9, 24, 0.93) 0%,
+        rgba(90, 15, 32, 0.84) 22%,
+        rgba(122, 20, 40, 0.56) 42%,
+        rgba(147, 42, 49, 0.22) 58%,
+        rgba(169, 63, 62, 0) 72%
     );
     opacity: 1;
 }
@@ -50,7 +50,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    background-color: var(--ffa-plum);
+    background-color: #7A1428;
 }
 
 /* "Watch the film" — sits beside the hero CTA on the video slide. */
@@ -108,7 +108,7 @@
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(20, 4, 11, 0.92);
+    background: rgba(35, 6, 14, 0.93);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,7 +184,7 @@
 
 .main-slider-content .big-title h2,
 .main-slider .sub-title h4 {
-    text-shadow: 0 2px 18px rgba(30, 6, 16, 0.45);
+    text-shadow: 0 2px 18px rgba(45, 7, 18, 0.5);
 }
 
 .main-slider .sub-title h4 {
@@ -213,7 +213,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(62, 16, 40, 0.55) 0%, rgba(122, 34, 73, 0.35) 100%);
+    background: linear-gradient(90deg, rgba(60, 9, 24, 0.6) 0%, rgba(122, 20, 40, 0.4) 100%);
     z-index: -1;
 }
 
@@ -357,7 +357,7 @@ body.mobile-menu-visible {
         height: 44px;
         border-radius: 50%;
         background: var(--anity-base);
-        box-shadow: 0 6px 18px rgba(46, 38, 48, 0.28);
+        box-shadow: 0 6px 18px rgba(46, 27, 29, 0.28);
         justify-content: center;
     }
 
@@ -481,7 +481,7 @@ body.mobile-menu-visible {
 .ffa-climb__carousel {
     border-radius: var(--anity-bdr-radius);
     overflow: hidden;
-    box-shadow: 0 24px 60px rgba(46, 38, 48, 0.14);
+    box-shadow: 0 24px 60px rgba(46, 27, 29, 0.14);
 }
 
 .ffa-climb__slide {
@@ -497,7 +497,7 @@ body.mobile-menu-visible {
     aspect-ratio: 1150 / 960;
     object-fit: cover;
     display: block;
-    background-color: #2E2630;
+    background-color: #2E1B1D;
 }
 
 /* On the video slide the caption moves to the top: the browser's native
@@ -507,7 +507,7 @@ body.mobile-menu-visible {
     top: 0;
     bottom: auto;
     padding: 22px 28px 60px;
-    background: linear-gradient(180deg, rgba(40, 8, 22, 0.85) 0%, rgba(40, 8, 22, 0) 100%);
+    background: linear-gradient(180deg, rgba(60, 9, 24, 0.86) 0%, rgba(60, 9, 24, 0) 100%);
     pointer-events: none;
 }
 
@@ -517,7 +517,7 @@ body.mobile-menu-visible {
     right: 0;
     bottom: 0;
     padding: 60px 28px 24px;
-    background: linear-gradient(180deg, rgba(40, 8, 22, 0) 0%, rgba(40, 8, 22, 0.82) 70%);
+    background: linear-gradient(180deg, rgba(60, 9, 24, 0) 0%, rgba(60, 9, 24, 0.84) 70%);
     color: var(--anity-white);
     display: flex;
     flex-direction: column;
@@ -690,7 +690,7 @@ body.mobile-menu-visible {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(20, 4, 11, 0.78);
+    background: rgba(35, 6, 14, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -833,4 +833,19 @@ a.ffa-donate-option:hover {
         display: inline-block;
         margin-top: 8px;
     }
+}
+
+/* --- Palette contrast ---------------------------------------------------- */
+/* The monochromatic card tints are deeper than the template's pastels, so the
+   default grey body copy sits too close to the background. Darken it on the
+   tinted cards rather than lightening the brand tints. */
+.feature-one__single p,
+.feature-one__single h4 a,
+.feature-one__single h4 {
+    color: #5A2F2C;
+}
+
+.feature-one__single h4,
+.feature-one__single h4 a {
+    color: var(--anity-black);
 }

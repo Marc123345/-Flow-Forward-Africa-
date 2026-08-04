@@ -37,7 +37,7 @@
 }
 
 .blog-one__img::after {
-    background: linear-gradient(90deg, rgba(var(--karoons-white-rgb, 46, 38, 48), 0.05) 0px, rgba(var(--karoons-white-rgb, 46, 38, 48), 0.05) 77%, rgba(var(--karoons-white-rgb, 46, 38, 48), 0.25) 92%, rgba(var(--karoons-white-rgb, 46, 38, 48), 0));
+    background: linear-gradient(90deg, rgba(var(--karoons-white-rgb, 46, 27, 29), 0.05) 0px, rgba(var(--karoons-white-rgb, 46, 27, 29), 0.05) 77%, rgba(var(--karoons-white-rgb, 46, 27, 29), 0.25) 92%, rgba(var(--karoons-white-rgb, 46, 27, 29), 0));
     content: "";
     height: 200%;
     left: -210%;
