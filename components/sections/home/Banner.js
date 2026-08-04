@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { donateLinkProps } from "@/lib/site"
+import { donateLinkProps, kilimanjaroImage } from "@/lib/site"
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -31,7 +31,7 @@ const slides = [
         cta: { label: "Donate", ...donateLinkProps },
     },
     {
-        image: "/assets/images/ffa/hero-3.jpg",
+        image: kilimanjaroImage(1920, 800),
         eyebrow: "One mountain. Thousands of futures.",
         title: <>Every step is a step<br /> towards ending<br /> period poverty</>,
         cta: { label: "The Kilimanjaro Climb", href: "/kilimanjaro" },

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { climb } from "@/lib/site"
+import { climb, kilimanjaroImage } from "@/lib/site"
 
 /**
  * The Kilimanjaro campaign block on the home page.
@@ -12,6 +12,11 @@ import { climb } from "@/lib/site"
  * Creative Commons BY-SA and require attribution — see IMAGE-CREDITS.md.
  */
 const slides = [
+    {
+        image: kilimanjaroImage(1150, 960),
+        caption: `${climb.mountain} — ${climb.heightMetres.toLocaleString("en-ZA")} m`,
+        credit: null,
+    },
     {
         image: "/assets/images/ffa/climb-1.jpg",
         caption: "Reaching Gilman's Point, 5,681 m",

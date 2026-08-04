@@ -97,20 +97,18 @@ change).
 |------|------|-------|---------|
 | `hero-1.jpg` | 1920×800 | Girls' group session outdoors | Home hero, slide 1 |
 | `hero-2.jpg` | 1920×800 | Girls together, outdoors | Home hero, slide 3 |
-| `hero-3.jpg` | 1920×800 | Mount Kilimanjaro under cloud | Home hero, slide 2 |
 | `about-1.jpg` | 1140×1200 | Outreach worker with girls | Home — About collage |
 | `about-2.jpg` | 740×680 | Small group reading together | Home — About collage |
 | `story-1.jpg` | 1200×1120 | Community session | About — Our Story |
 | `initiative-education.jpg` | 820×740 | Session under a shelter | Initiatives |
 | `initiative-products.jpg` | 820×740 | Menstrual products being handed out | Initiatives |
 | `initiative-partners.jpg` | 820×740 | Health worker with materials | Initiatives |
+| *(ImageKit)* | any | **Mount Kilimanjaro** — used everywhere the mountain appears | Home hero, carousel slide 1, Kilimanjaro page, climb blog post |
 | `climb-1.jpg` | 1150×960 | Climber at Gilman's Point | Home — Kilimanjaro carousel |
 | `climb-2.jpg` | 1150×960 | Trekkers heading for the Lava Tower | Home — Kilimanjaro carousel |
 | `climb-3.jpg` | 1150×960 | The team at the higher camps | Home — Kilimanjaro carousel |
 | `climb-4.jpg` | 1150×960 | A woman porter on the mountain | Home — Kilimanjaro carousel |
-| `kilimanjaro-wide.jpg` | 1800×930 | Kilimanjaro under cloud | Kilimanjaro page |
 | `blog-listening.jpg` | 1200×750 | Large group seated outdoors | Blog post 1 |
-| `blog-kilimanjaro.jpg` | 1200×750 | Climber at the summit sign | Blog post 2 |
 | `donate-wide.jpg` | 1800×840 | Girl smiling with a certificate | Home — Get Involved |
 | `cta-wide.jpg` | 1920×500 | Table Mountain, Cape Town | Closing CTA bands |
 | `page-header-bg.jpg` | 1920×550 | Table Mountain, Cape Town | All inner-page banners |
@@ -118,6 +116,14 @@ change).
 `founder.svg` is **still a branded placeholder on purpose.** It marks a portrait
 of Alexia (Lexi) Levy — a real, named person — and putting a stock photograph of
 someone else there would misrepresent her. It needs an actual photo of Lexi.
+
+**The mountain itself is one image, served from ImageKit.** Every place the
+site shows Mount Kilimanjaro pulls from
+`kilimanjaroImage(width, height)` in `lib/site.js`, which points at a single
+photograph on Flow Forward Africa's ImageKit account and lets ImageKit crop and
+convert it per slot. To change the mountain photo everywhere, change that one
+URL. The source is portrait, so the helper crops from the top — see the comment
+in `lib/site.js` before altering it.
 
 **Three of the carousel photos need attribution.** `climb-2`, `climb-3` and
 `climb-4` are CC BY-SA, so each slide renders a small credit line over the

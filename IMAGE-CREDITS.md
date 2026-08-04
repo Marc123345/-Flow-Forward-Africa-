@@ -25,7 +25,6 @@ This file records the provenance of every image — keep it with the project.
 |------|----------|-------|---------|--------|
 | `hero-1.jpg` | Home hero, slide 1 | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54340122497) |
 | `hero-2.jpg` | Home hero, slide 3 (Our vision) | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54340122957) |
-| `hero-3.jpg` | Home hero, slide 2 (Kilimanjaro) | Clouds Over Mount Kilimanjaro (Unsplash) | [CC0 1.0 (public domain dedication)](https://creativecommons.org/publicdomain/zero/1.0/) | [wikimedia](https://commons.wikimedia.org/w/index.php?curid=62372137) |
 | `about-1.jpg` | Home — About collage | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54341023831) |
 | `about-2.jpg` | Home — About collage | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54341023551) |
 | `story-1.jpg` | About — Our Story | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54347273941) |
@@ -36,12 +35,27 @@ This file records the provenance of every image — keep it with the project.
 | `climb-2.jpg` | Home — Kilimanjaro carousel | Climbing toward the Lava Tower site, Kilimanjaro — **Masa Sakano** | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | [wikimedia](https://commons.wikimedia.org/wiki/File:Climbing_toward_the_Lava_Tower_site,_Kilimanjaro,_-25_Sept._2011_a.jpg) |
 | `climb-3.jpg` | Home — Kilimanjaro carousel | Kilimanjaro porters on the higher camps — **FokshaAnatolii** | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [wikimedia](https://commons.wikimedia.org/wiki/File:Kilimanjaro_porters_on_the_higher_camps.jpg) |
 | `climb-4.jpg` | Home — Kilimanjaro carousel | Woman porter on Kilimanjaro — **Sergei Andreichuk** | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [wikimedia](https://commons.wikimedia.org/wiki/File:%D0%96%D0%B5%D0%BD%D1%89%D0%B8%D0%BD%D0%B0-%D0%BF%D0%BE%D1%80%D1%82%D0%B5%D1%80_%D0%BD%D0%B0_%D0%9A%D0%B8%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD%D0%B4%D0%B6%D0%B0%D1%80%D0%BE.jpg) |
-| `kilimanjaro-wide.jpg` | Kilimanjaro page | Clouds Over Mount Kilimanjaro (Unsplash) | [CC0 1.0 (public domain dedication)](https://creativecommons.org/publicdomain/zero/1.0/) | [wikimedia](https://commons.wikimedia.org/w/index.php?curid=62372137) |
 | `blog-listening.jpg` | Blog — listening-first | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54340122497) |
-| `blog-kilimanjaro.jpg` | Blog — climbing-higher-than-a-mountain | Afowiri Fondzenyuy at Gilman’s Point, Mount Kilimanjaro (5681 m), 2026 | [CC0 1.0 (public domain dedication)](https://creativecommons.org/publicdomain/zero/1.0/) | [wikimedia](https://commons.wikimedia.org/w/index.php?curid=183811452) |
 | `donate-wide.jpg` | Donate + Home | AGE - Advancing Girls Education | [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | [flickr](https://www.flickr.com/photos/62256332@N08/54340123497) |
 | `cta-wide.jpg` | Closing CTA bands | Cape Town Mountain | [CC0 1.0 (public domain dedication)](https://creativecommons.org/publicdomain/zero/1.0/) | [wikimedia](https://commons.wikimedia.org/w/index.php?curid=74059851) |
 | `page-header-bg.jpg` | All inner-page banners | Table Mountain (Unsplash) | [CC0 1.0 (public domain dedication)](https://creativecommons.org/publicdomain/zero/1.0/) | [wikimedia](https://commons.wikimedia.org/w/index.php?curid=62224836) |
+
+## Mount Kilimanjaro
+
+Everywhere the mountain itself appears — the home hero, the first slide of the
+climb carousel, the Kilimanjaro page and the climb blog post — the site uses a
+single photograph hosted on Flow Forward Africa's ImageKit account:
+
+`https://ik.imagekit.io/qcvroy8xpd/stephan-bechert-1ZfMAnL4ubE-unsplash.jpg`
+
+Photograph by **Stephan Bechert** via [Unsplash](https://unsplash.com/photos/1ZfMAnL4ubE)
+([Unsplash Licence](https://unsplash.com/license) — free for commercial use, no
+attribution required, though crediting the photographer is good practice).
+
+ImageKit does the resizing and format conversion, so each slot requests exactly
+the size it needs via `kilimanjaroImage(width, height)` in `lib/site.js`. The
+source is **portrait** (2401×3601), so all crops use `fo-top` — a centred crop
+into a wide banner lands on the foreground and loses the mountain entirely.
 
 ## Not photography
 
