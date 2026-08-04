@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { Band, Prose, SectionTitle, CtaBand } from "@/components/elements/Blocks"
-import { site } from "@/lib/site"
 
 export const metadata = {
     title: "Meet the Founder",
@@ -20,11 +19,6 @@ export default function Founder() {
                                 <div className="volunteer-details__left">
                                     <div className="volunteer-details__img">
                                         <img className="ffa-photo" src="/assets/images/ffa/founder.svg" alt="Alexia (Lexi) Levy" />
-                                        <div className="volunteer-details__social">
-                                            <Link href={site.social.instagram} aria-label="Instagram"><span className="icon-instagram"></span></Link>
-                                            <Link href={site.social.facebook} aria-label="Facebook"><span className="icon-facebook"></span></Link>
-                                            <Link href={site.social.linkedin} aria-label="LinkedIn"><span className="icon-link-in"></span></Link>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

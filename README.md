@@ -21,7 +21,6 @@ These are the open items. Everything else is finished.
 | 1 | **Founder portrait** is still a placeholder, and the Kilimanjaro shot is stock. All other photography is FFA's own. | `public/assets/images/ffa/` — see [Photography](#photography) |
 | 2 | **Contact email.** Currently `hello@flowforwardafrica.org` (invented). | `lib/site.js` → `email` |
 | 3 | **Phone number.** Omitted everywhere (set to `null`); the UI hides it until you add one. | `lib/site.js` → `phone` |
-| 4 | **Social links.** All point at `#`. | `lib/site.js` → `social` |
 | 5 | **Donation URL.** Donations are handled off-site. Paste the campaign link into `donateUrl` and every Donate button on the site points at it and opens in a new tab. Until then they fall back to `/contact`. | `lib/site.js` → `donateUrl` |
 | 6 | **Contact form delivery.** No endpoint configured, so the form is replaced by a direct "email us" block. | See [Contact form](#contact-form) |
 | 7 | **Kilimanjaro dates.** Copy says "end of September" with no year. | `lib/site.js` → `climb.when` |
@@ -103,11 +102,11 @@ because the destination differs:
 | Answer | Goes to |
 |--------|---------|
 | Yes — needs the SARS tax-deductible receipt | GivenGain campaign |
-| No | *Awaiting link — shown as "coming soon" and not clickable* |
+| No | BackaBuddy — Kilimanjaro expedition campaign |
 
-Both URLs live in `site.donate` in `lib/site.js`. Fill in
-`withoutCertificate` and that option becomes live automatically; until then it
-is deliberately inert rather than pointing somewhere wrong.
+Both URLs live in `site.donate` in `lib/site.js`. Setting either to `null`
+turns that option into a non-clickable "coming soon" row rather than a dead
+link.
 
 The chooser is `components/elements/DonateModal.js`, opened by any
 `DonateButton` via a window event, with the host mounted once in `Layout`.

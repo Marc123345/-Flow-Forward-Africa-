@@ -50,11 +50,6 @@ export default function Footer() {
                                             Ending period poverty through access to menstrual products, menstrual
                                             health education and community-led support across South Africa.
                                         </p>
-                                        <div className="site-footer__social">
-                                            <Link href={site.social.instagram} aria-label="Instagram"><i className="icon-instagram"></i></Link>
-                                            <Link href={site.social.facebook} aria-label="Facebook"><i className="icon-facebook"></i></Link>
-                                            <Link href={site.social.linkedin} aria-label="LinkedIn"><i className="icon-link-in"></i></Link>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">

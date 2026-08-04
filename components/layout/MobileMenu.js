@@ -64,14 +64,6 @@ const MobileMenu = ({ handleMobileMenu, closeMobileMenu }) => {
               </li>
             )}
           </ul>
-          <div className="mobile-nav__top">
-            <div className="mobile-nav__social">
-              <Link href={site.social.instagram} className="fab fa-instagram" aria-label="Instagram"></Link>
-              <Link href={site.social.facebook} className="fab fa-facebook-square" aria-label="Facebook"></Link>
-              <Link href={site.social.linkedin} className="fab fa-linkedin-in" aria-label="LinkedIn"></Link>
-              <Link href={site.social.tiktok} className="fab fa-tiktok" aria-label="TikTok"></Link>
-            </div>
-          </div>
         </div>
       </div>
     </>

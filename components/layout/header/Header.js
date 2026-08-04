@@ -1,18 +1,7 @@
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
-import { site } from "@/lib/site"
 import DonateButton from "@/components/elements/DonateButton"
-
-function Social() {
-    return (
-        <div className="main-menu__social">
-            <Link href={site.social.instagram} aria-label="Instagram"><i className="icon-instagram"></i></Link>
-            <Link href={site.social.facebook} aria-label="Facebook"><i className="icon-facebook"></i></Link>
-            <Link href={site.social.linkedin} aria-label="LinkedIn"><i className="icon-link-in"></i></Link>
-        </div>
-    )
-}
 
 function NavInner({ handleMobileMenu, isMobileMenu }) {
     return (
@@ -52,37 +41,6 @@ export default function Header({ scroll, handleMobileMenu, closeMobileMenu, isMo
     return (
         <>
             <header className="main-header">
-                <div className="main-menu__top">
-                    <div className="container">
-                        <div className="main-menu__top-inner">
-                            <ul className="list-unstyled main-menu__contact-list">
-                                <li>
-                                    <div className="icon">
-                                        <i className="icon-envelope"></i>
-                                    </div>
-                                    <div className="text">
-                                        <p><Link href={`mailto:${site.email}`}>{site.email}</Link></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <i className="icon-pin-two"></i>
-                                    </div>
-                                    <div className="text">
-                                        <p>{site.location}</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div className="main-menu__top-right">
-                                <div className="main-menu__social-box">
-                                    <p className="main-menu__social-title">Follow Us On:</p>
-                                    <Social />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <nav className="main-menu">
                     <div className="main-menu__wrapper">
                         <div className="container">

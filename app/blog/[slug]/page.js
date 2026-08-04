@@ -3,7 +3,6 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { posts, getPost } from "@/lib/posts"
 import { CtaBand } from "@/components/elements/Blocks"
-import { site } from "@/lib/site"
 
 export function generateStaticParams() {
     return posts.map((post) => ({ slug: post.slug }))
@@ -76,13 +75,6 @@ export default function BlogPost({ params }) {
                                         </div>
                                     </div>
 
-                                    <div className="blog-details__bottom" style={{ marginTop: "40px" }}>
-                                        <div className="blog-details__social-list">
-                                            <Link href={site.social.instagram} aria-label="Instagram"><span className="icon-instagram"></span></Link>
-                                            <Link href={site.social.facebook} aria-label="Facebook"><span className="icon-facebook"></span></Link>
-                                            <Link href={site.social.linkedin} aria-label="LinkedIn"><span className="icon-link-in"></span></Link>
-                                        </div>
-                                    </div>
 
                                     {others.length > 0 && (
                                         <div className="ffa-prose" style={{ marginTop: "50px" }}>
