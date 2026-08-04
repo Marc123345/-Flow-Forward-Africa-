@@ -41,7 +41,6 @@ const slides = [
         eyebrow: "Ending period poverty",
         title: <>Every girl<br /> deserves the freedom<br /> to thrive</>,
         cta: { label: "Donate", donate: true },
-        watch: true,
     },
     {
         image: kilimanjaroImage(1920, 800),
@@ -103,18 +102,18 @@ export default function Banner() {
                                                         <span><i className="icon-arrow-right"></i></span>
                                                     </Link>
                                                 )}
-                                                {slide.watch && (
-                                                    <button
-                                                        type="button"
-                                                        className="ffa-watch-btn"
-                                                        onClick={openPlayer}
-                                                    >
-                                                        <span className="ffa-watch-btn__icon">
-                                                            <i className="fa fa-play"></i>
-                                                        </span>
-                                                        Watch the film
-                                                    </button>
-                                                )}
+                                                {/* On every slide, not just the first — whichever
+                                                    one someone lands on should offer the film. */}
+                                                <button
+                                                    type="button"
+                                                    className="ffa-watch-btn"
+                                                    onClick={openPlayer}
+                                                >
+                                                    <span className="ffa-watch-btn__icon">
+                                                        <i className="fa fa-play"></i>
+                                                    </span>
+                                                    Watch the film
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
