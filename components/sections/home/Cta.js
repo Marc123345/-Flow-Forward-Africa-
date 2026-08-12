@@ -1,12 +1,13 @@
 import Link from "next/link"
 import DonateButton from "@/components/elements/DonateButton"
+import LazyBg from "@/components/elements/LazyBg"
 
 export default function Cta() {
     return (
         <>
             {/* Closing call to action */}
             <section className="cta-one">
-                <div className="cta-one__bg" style={{ backgroundImage: 'url(/assets/images/ffa/cta-wide.jpg)' }}></div>
+                <LazyBg className="cta-one__bg" image="/assets/images/ffa/cta-wide.jpg" />
                 <div className="container">
                     <div className="cta-one__inner">
                         <div className="cta-one__title-box sec-title-animation animation-style1">

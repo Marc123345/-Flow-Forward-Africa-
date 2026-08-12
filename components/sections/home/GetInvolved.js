@@ -1,5 +1,6 @@
 import Link from "next/link"
 import DonateButton from "@/components/elements/DonateButton"
+import LazyBg from "@/components/elements/LazyBg"
 
 export default function GetInvolved() {
     return (
@@ -10,7 +11,7 @@ export default function GetInvolved() {
                     <div className="row">
                         <div className="col-xl-6 col-lg-6 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div className="donate-one__single">
-                                <div className="donate-one__single-bg" style={{ backgroundImage: 'url(/assets/images/ffa/donate-wide.jpg)' }}></div>
+                                <LazyBg className="donate-one__single-bg" image="/assets/images/ffa/donate-wide.jpg" />
                                 <h3 className="donate-one__title">
                                     Keep a girl in school
                                 </h3>
@@ -25,7 +26,7 @@ export default function GetInvolved() {
                         </div>
                         <div className="col-xl-6 col-lg-6 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div className="donate-one__single donate-one__single-2">
-                                <div className="donate-one__single-bg" style={{ backgroundImage: 'url(/assets/images/ffa/cta-wide.jpg)' }}></div>
+                                <LazyBg className="donate-one__single-bg" image="/assets/images/ffa/cta-wide.jpg" />
                                 <h3 className="donate-one__title">
                                     <Link href="/contact">Collaborate, volunteer or sponsor</Link>
                                 </h3>

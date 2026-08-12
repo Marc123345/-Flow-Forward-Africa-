@@ -1,5 +1,6 @@
 import Link from "next/link"
 import DonateButton from "./DonateButton"
+import LazyBg from "./LazyBg"
 
 /**
  * Small, reusable content blocks used across the inner pages so every page
@@ -88,7 +89,7 @@ export function IconCards({ items }) {
 export function CtaBand({ title, primary, secondary, image = "/assets/images/ffa/cta-wide.jpg" }) {
     return (
         <section className="cta-one">
-            <div className="cta-one__bg" style={{ backgroundImage: `url(${image})` }}></div>
+            <LazyBg className="cta-one__bg" image={image} />
             <div className="container">
                 <div className="cta-one__inner">
                     <div className="cta-one__title-box sec-title-animation animation-style1">
