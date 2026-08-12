@@ -24,6 +24,28 @@ export const metadata = {
         siteName: site.name,
         locale: 'en_ZA',
         type: 'website',
+        /*
+         * WhatsApp is the fussiest of the scrapers and it is where this link
+         * gets shared, so the image is built for it: JPEG rather than WebP or
+         * SVG, comfortably under its size limit, served from the same host as
+         * the page so there is no redirect in the way, and with the dimensions
+         * declared so it can lay the card out without downloading first.
+         */
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                type: 'image/jpeg',
+                alt: `${site.name} — ${site.tagline}`,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: `${site.name} — ${site.tagline}`,
+        description: site.description,
+        images: ['/og-image.jpg'],
     },
 }
 
