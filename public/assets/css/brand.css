@@ -25,6 +25,15 @@
     height: auto;
 }
 
+/* Until the hero photograph arrives there is nothing under the scrim, and the
+   scrim is nearly opaque, so the slide paints as a black rectangle. On a phone
+   the hero is almost the whole viewport, which is why the page looked broken
+   when opened cold from a link. A blush base means the pre-image state reads
+   as the brand rather than as a dead screen. */
+.main-slider .image-layer {
+    background-color: var(--ffa-blush);
+}
+
 /* --- Hero -------------------------------------------------------------- */
 /* The template washes the hero photo with a rainbow gradient image. Replaced
    with a scrim that darkens rather than tints: the earlier version used
@@ -59,6 +68,26 @@
         ) !important;
     opacity: 1;
 }
+
+/* The scrim is a 90deg gradient, tuned so the dark end covers the left third
+   of a wide screen and clears to the photograph on the right. A 390px viewport
+   never reaches the clear end, so the whole slide goes dark. On small screens
+   run it vertically instead: the photograph shows through the middle, and the
+   copy still has weight behind it. */
+@media (max-width: 767px) {
+    .main-slider .swiper-slide .image-layer__left-gradient,
+    .main-slider .image-layer__left-gradient {
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(28, 8, 14, 0.72) 0%,
+                rgba(28, 8, 14, 0.48) 38%,
+                rgba(28, 8, 14, 0.62) 70%,
+                rgba(28, 8, 14, 0.86) 100%
+            ) !important;
+    }
+}
+
 
 /* "Watch the film" — sits beside the hero CTA on the video slide. */
 .main-slider .btn-box {
